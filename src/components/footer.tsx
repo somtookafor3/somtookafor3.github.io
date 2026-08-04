@@ -18,10 +18,19 @@ export function Footer() {
             href={profile.github}
             target="_blank"
             rel="noreferrer"
-            aria-label="GitHub profile"
+            aria-label="GitHub profile (somtookafor3)"
             className="text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
           >
             <GithubIcon size={18} />
+          </a>
+          <a
+            href={profile.githubCoursework}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub profile for university coursework (okafors)"
+            className="text-xs text-[var(--muted)] transition-colors hover:text-[var(--accent)]"
+          >
+            coursework
           </a>
           <a
             href={`mailto:${profile.email}`}

@@ -6,7 +6,10 @@ export const profile = {
     "I build backend systems, trading infrastructure, and practical automation — with the guardrails designed in first.",
   location: "Johannesburg, South Africa",
   email: "somtookafor3@gmail.com",
-  github: "https://github.com/okafors",
+  github: "https://github.com/somtookafor3",
+  // Earlier university coursework was pushed under a second account, which is
+  // where the Big Data and mobile-app repositories still live.
+  githubCoursework: "https://github.com/okafors",
   cvFile: "/Somto-Okafor-CV.pdf",
   summary: [
     "I'm a Computer Science graduate (Coventry University, 2024) working across backend engineering, full-stack development, and applied AI. My recent work centres on financial systems: a 16,000-line asynchronous crypto-arbitrage engine with a full cost model, circuit breakers, chaos testing, and 228 automated tests, alongside its TypeScript trading terminal.",

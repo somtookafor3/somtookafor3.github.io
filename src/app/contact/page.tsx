@@ -22,8 +22,14 @@ export default function ContactPage() {
     {
       icon: GithubIcon,
       label: "GitHub",
-      value: "github.com/okafors",
+      value: "github.com/somtookafor3",
       href: profile.github,
+    },
+    {
+      icon: GithubIcon,
+      label: "GitHub (coursework)",
+      value: "github.com/okafors",
+      href: profile.githubCoursework,
     },
     {
       icon: MapPin,
