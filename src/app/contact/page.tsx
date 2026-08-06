@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, FileText } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { Section, Card } from "@/components/ui";
+import { Section, Card, ButtonLink } from "@/components/ui";
 import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
@@ -82,6 +82,15 @@ export default function ContactPage() {
                 </div>
               );
             })}
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <ButtonLink href={profile.cvFile} download="Somto-Okafor-CV.pdf">
+              <FileText size={16} /> Download CV
+            </ButtonLink>
+            <ButtonLink href={profile.github} variant="ghost" external>
+              <GithubIcon size={16} /> GitHub
+            </ButtonLink>
           </div>
 
           <Card className="mt-8 max-w-3xl bg-[var(--surface-raised)]">

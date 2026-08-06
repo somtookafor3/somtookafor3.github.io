@@ -125,11 +125,14 @@ export function ButtonLink({
   children,
   variant = "primary",
   external,
+  download,
 }: {
   href: string;
   children: React.ReactNode;
   variant?: "primary" | "ghost";
   external?: boolean;
+  /** Serve the target as a file download instead of navigating to it. */
+  download?: string;
 }) {
   const className = cn(
     "inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors",
@@ -138,6 +141,15 @@ export function ButtonLink({
       : "border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)]/50 hover:text-[var(--accent)]",
   );
 
+  // A download needs a plain anchor: next/link would intercept the click and
+  // try to route to the file rather than hand it to the browser's downloader.
+  if (download) {
+    return (
+      <a href={href} download={download} className={className}>
+        {children}
+      </a>
+    );
+  }
   if (external) {
     return (
       <a href={href} target="_blank" rel="noreferrer" className={className}>

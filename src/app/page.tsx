@@ -34,6 +34,9 @@ export default function Home() {
               <ButtonLink href="/projects">
                 View projects <ArrowRight size={16} />
               </ButtonLink>
+              <ButtonLink href={profile.cvFile} download="Somto-Okafor-CV.pdf">
+                <FileText size={16} /> Download CV
+              </ButtonLink>
               <ButtonLink href={profile.github} variant="ghost" external>
                 <GithubIcon size={16} /> GitHub
               </ButtonLink>
