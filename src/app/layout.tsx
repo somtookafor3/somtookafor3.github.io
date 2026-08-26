@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s — Somtochukwu Okafor",
   },
   description:
-    "Computer Science graduate building full-stack applications, real-time trading systems, and AI-powered automation. Portfolio of evidence-backed engineering work.",
+    "Computer Science graduate working on backend systems, crypto arbitrage tooling and automation in Python and TypeScript. Projects, code and CV.",
   keywords: [
     "software engineer",
     "full-stack developer",

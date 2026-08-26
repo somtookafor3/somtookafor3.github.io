@@ -19,7 +19,7 @@ export default function DashboardPage() {
       <main className="flex-1">
         <Section
           title="Technical dashboard"
-          subtitle="Figures derived from static analysis of my local codebase. Line counts exclude dependencies, virtual environments, and build output."
+          subtitle="A breakdown of what I've written and where the time went. Line counts leave out dependencies, virtual environments and build output, so these are files I wrote myself."
           className="pt-16"
         >
           <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--border)] lg:grid-cols-4">
@@ -40,7 +40,7 @@ export default function DashboardPage() {
             <Card>
               <h2 className="text-base font-semibold">Language distribution</h2>
               <p className="mb-4 mt-1 text-xs text-[var(--muted)]">
-                Lines of code by language across all analysed projects.
+                Lines of code by language across the projects listed here.
               </p>
               <LanguageChart />
             </Card>
@@ -48,7 +48,7 @@ export default function DashboardPage() {
             <Card>
               <h2 className="text-base font-semibold">Code by project category</h2>
               <p className="mb-4 mt-1 text-xs text-[var(--muted)]">
-                Where the engineering effort actually went.
+                Which kinds of projects took up the most time.
               </p>
               <CategoryChart />
             </Card>
@@ -57,9 +57,9 @@ export default function DashboardPage() {
           <Card className="mt-5">
             <h2 className="text-base font-semibold">Project scoring</h2>
             <p className="mb-4 mt-1 text-xs text-[var(--muted)]">
-              Top three projects rated across five dimensions (0–10). The testing
-              axis shows the honest gap: the Python engine has 228 tests, the
-              TypeScript terminal has none.
+              My top three projects across five dimensions (0–10). The testing
+              axis is uneven for a reason: the Python engine has 228 tests and
+              the TypeScript terminal has none, which is something I need to fix.
             </p>
             <ScoreRadar />
             <ScoreLegend />

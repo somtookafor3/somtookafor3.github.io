@@ -8,7 +8,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Software projects analysed from source: trading systems, backend APIs, HPC data analysis, automation, security, and mobile.",
+    "Projects I've built: crypto arbitrage tooling, backend APIs, parallel data processing, automation scripts, security coursework and a mobile app.",
 };
 
 export default function ProjectsPage() {
@@ -20,7 +20,7 @@ export default function ProjectsPage() {
       <main className="flex-1">
         <Section
           title="Projects"
-          subtitle="Every entry below is real work found on my own machine, analysed from source. Ranking reflects technical complexity, architecture quality, and engineering relevance. Maturity labels are deliberately honest — several of these are advanced prototypes, not shipped products."
+          subtitle="University coursework through to what I'm working on now. I've said how far each one got, because a few are prototypes I never took further and it's better you hear that from me."
           className="pt-16"
         >
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

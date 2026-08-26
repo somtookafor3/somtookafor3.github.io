@@ -9,7 +9,7 @@ import type { Skill } from "@/data/types";
 export const metadata: Metadata = {
   title: "Skills",
   description:
-    "Technical skills assessment derived from source-code evidence, with proficiency estimated from depth and frequency of real use.",
+    "Languages, frameworks and tools I've actually used, with a note on where I used each one.",
 };
 
 const levelWidth: Record<Skill["level"], string> = {

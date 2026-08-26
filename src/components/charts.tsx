@@ -18,24 +18,24 @@ import {
 import { languageUsage, categoryBreakdown, projectScores } from "@/data/stats";
 
 const tooltipStyle = {
-  backgroundColor: "#111a2e",
-  border: "1px solid #1c2942",
+  backgroundColor: "#1e1b18",
+  border: "1px solid #2a2621",
   borderRadius: "8px",
   fontSize: "12px",
-  color: "#e6edf7",
+  color: "#f0ebe3",
 };
 
-const PIE_COLORS = ["#38bdf8", "#818cf8", "#34d399", "#fbbf24", "#f472b6", "#fb923c"];
+const PIE_COLORS = ["#e0913a", "#c96f4a", "#7fa650", "#d9a441", "#a8735f", "#8c9b6e"];
 
 export function LanguageChart() {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <BarChart data={languageUsage} layout="vertical" margin={{ left: 20, right: 20 }}>
-        <XAxis type="number" stroke="#8b9bb4" fontSize={11} tickLine={false} />
+        <XAxis type="number" stroke="#a09587" fontSize={11} tickLine={false} />
         <YAxis
           type="category"
           dataKey="name"
-          stroke="#8b9bb4"
+          stroke="#a09587"
           fontSize={11}
           width={90}
           tickLine={false}
@@ -67,6 +67,8 @@ export function CategoryChart() {
           innerRadius={60}
           outerRadius={100}
           paddingAngle={2}
+          // Without this the slice paths render empty on first paint.
+          isAnimationActive={false}
         >
           {categoryBreakdown.map((entry, i) => (
             <Cell key={entry.name} fill={PIE_COLORS[i % PIE_COLORS.length]} stroke="none" />
@@ -95,8 +97,8 @@ export function ScoreRadar() {
   return (
     <ResponsiveContainer width="100%" height={340}>
       <RadarChart data={data}>
-        <PolarGrid stroke="#1c2942" />
-        <PolarAngleAxis dataKey="axis" stroke="#8b9bb4" fontSize={11} />
+        <PolarGrid stroke="#2a2621" />
+        <PolarAngleAxis dataKey="axis" stroke="#a09587" fontSize={11} />
         <Tooltip contentStyle={tooltipStyle} />
         {top.map((p, i) => (
           <Radar

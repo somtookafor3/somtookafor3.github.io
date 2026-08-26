@@ -107,7 +107,7 @@ export function CodeBlock({
   language: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-[var(--border)] bg-[#04070e]">
+    <div className="overflow-hidden rounded-lg border border-[var(--border)] bg-[#0a0908]">
       <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-2">
         <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--muted)]">
           {language}
@@ -137,7 +137,7 @@ export function ButtonLink({
   const className = cn(
     "inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors",
     variant === "primary"
-      ? "bg-[var(--accent)] text-[#04121d] hover:bg-[var(--accent)]/90"
+      ? "bg-[var(--accent)] text-[var(--on-accent)] hover:bg-[var(--accent)]/90"
       : "border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)]/50 hover:text-[var(--accent)]",
   );
 

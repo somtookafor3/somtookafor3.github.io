@@ -1,15 +1,13 @@
-/**
- * All figures derived from static analysis of the local codebase.
- * Line counts exclude node_modules, virtualenvs, and build output.
- */
+// Line counts from my own projects. Excludes node_modules, virtualenvs and
+// build output, so the numbers are code I actually wrote.
 
 export const languageUsage = [
-  { name: "Python", lines: 17300, color: "#38bdf8" },
-  { name: "TypeScript", lines: 6059, color: "#818cf8" },
-  { name: "MATLAB", lines: 2813, color: "#34d399" },
-  { name: "C#", lines: 1400, color: "#fbbf24" },
-  { name: "JavaScript", lines: 1215, color: "#f472b6" },
-  { name: "C++", lines: 317, color: "#fb923c" },
+  { name: "Python", lines: 17300, color: "#e0913a" },
+  { name: "TypeScript", lines: 6059, color: "#c96f4a" },
+  { name: "MATLAB", lines: 2813, color: "#7fa650" },
+  { name: "C#", lines: 1400, color: "#d9a441" },
+  { name: "JavaScript", lines: 1215, color: "#a8735f" },
+  { name: "C++", lines: 317, color: "#8c9b6e" },
 ];
 
 export const categoryBreakdown = [
@@ -31,7 +29,7 @@ export const projectScores = [
 ];
 
 export const headlineStats = [
-  { label: "Lines of code analysed", value: "29,000+", detail: "Across 12 repositories and 20+ local projects" },
+  { label: "Lines of code written", value: "29,000+", detail: "Across 12 repositories and 20+ local projects" },
   { label: "Automated tests", value: "228", detail: "Async pytest suite in the arbitrage engine" },
   { label: "Exchanges integrated", value: "9", detail: "3 South African, 6 international venues" },
   { label: "Largest system", value: "16.2k lines", detail: "108 files across 12 architectural layers" },

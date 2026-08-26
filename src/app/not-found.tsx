@@ -14,7 +14,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-4 py-2.5 text-sm font-medium text-[#04121d] transition-colors hover:bg-[var(--accent)]/90"
+        className="mt-8 inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-4 py-2.5 text-sm font-medium text-[var(--on-accent)] transition-colors hover:bg-[var(--accent)]/90"
       >
         Back to home
       </Link>

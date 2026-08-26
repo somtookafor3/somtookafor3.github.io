@@ -96,11 +96,10 @@ export default function ContactPage() {
           <Card className="mt-8 max-w-3xl bg-[var(--surface-raised)]">
             <h2 className="text-base font-semibold">What I&apos;m looking for</h2>
             <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">
-              A team where I can work on systems with real constraints — latency,
-              correctness, money, or scale — and learn from engineers who are
-              better than me. I&apos;m most useful on backend and data-intensive
-              work, and I&apos;m happy to be the person who writes the tests and
-              the guardrails.
+              A graduate or junior backend role where correctness actually
+              matters, and a team with people I can learn from. I&apos;ve done
+              most of my work in Python, and I&apos;m comfortable being the
+              person who writes the tests. Open to remote, hybrid or on-site.
             </p>
           </Card>
         </Section>

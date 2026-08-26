@@ -67,7 +67,7 @@ export default function Home() {
         {/* Featured projects */}
         <Section
           title="Selected work"
-          subtitle="Ranked by technical complexity, architecture, and engineering quality. Each project is labelled with its honest maturity — production shape is not the same as production history."
+          subtitle="Roughly in order of how much engineering went into them. I've marked how far each one actually got, since a few are prototypes rather than finished products."
         >
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((p, i) => (
@@ -84,13 +84,13 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Philosophy */}
+        {/* How I work */}
         <Section
           title="How I work"
-          subtitle="Four principles that show up consistently across the codebase."
+          subtitle="Habits that come up again and again in the code."
         >
           <div className="grid gap-5 sm:grid-cols-2">
-            {profile.philosophy.map((p) => (
+            {profile.howIWork.map((p) => (
               <Card key={p.title}>
                 <h3 className="text-base font-semibold">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">

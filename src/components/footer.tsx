@@ -10,7 +10,7 @@ export function Footer() {
         <div>
           <p className="text-sm text-[var(--foreground)]">{profile.name}</p>
           <p className="mt-1 text-xs text-[var(--muted)]">
-            Every project here is generated from evidence in my own codebase.
+            Backend and systems work. Based in Johannesburg.
           </p>
         </div>
         <div className="flex items-center gap-4">
