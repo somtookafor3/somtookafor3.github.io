@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Barber Shop — Blairgowrie Plaza, Randburg</title>
+<style>
+  :root{--ink:#1a2233;--soft:#51596b;--bg:#f6f5f1;--paper:#fff;--navy:#1e2d4a;--red:#b5362f;--cream:#efe9db;--gold:#c9a44c;--radius:14px;--shadow:0 12px 30px rgba(30,45,74,.12)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(246,245,241,.96);backdrop-filter:blur(8px);border-bottom:2px solid var(--navy)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{text-decoration:none;color:var(--navy);font-weight:800;font-size:1.2rem;letter-spacing:.04em}
+  .brand span{color:var(--red)}
+  .btn{display:inline-block;border:0;cursor:pointer;font-weight:700;font-size:.93rem;padding:13px 28px;border-radius:6px;text-decoration:none;transition:transform .15s}
+  .btn-n{background:var(--navy);color:#fff}
+  .btn-n:hover{transform:translateY(-1px)}
+  .hero{text-align:center;padding:76px 0 64px;background:
+    repeating-linear-gradient(45deg,transparent,transparent 34px,rgba(181,54,47,.05) 34px,rgba(181,54,47,.05) 44px,transparent 44px,transparent 78px,rgba(30,45,74,.05) 78px,rgba(30,45,74,.05) 88px)}
+  .est{display:inline-block;border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:6px 20px;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--soft);margin-bottom:24px}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,3.8rem);line-height:1.05;font-weight:800;color:var(--navy);margin-bottom:14px}
+  .hero h1 em{font-style:italic;color:var(--red)}
+  .hero p{color:var(--soft);font-size:1.1rem;max-width:34rem;margin:0 auto 30px}
+  .pole{display:flex;justify-content:center;gap:8px;margin-bottom:26px}
+  .pole i{display:block;width:14px;height:52px;border-radius:7px}
+  .pole i:nth-child(1){background:var(--red)}.pole i:nth-child(2){background:#fff;border:1px solid #dcd6c8}.pole i:nth-child(3){background:var(--navy)}
+  section{padding:66px 0}
+  .sec-head{text-align:center;max-width:36rem;margin:0 auto 40px}
+  .sec-head h2{font-size:clamp(1.7rem,3.2vw,2.2rem);font-weight:800;color:var(--navy)}
+  .sec-head p{color:var(--soft);margin-top:10px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;text-align:center;border-top:3px solid var(--gold)}
+  .card .em{font-size:1.7rem;display:block;margin-bottom:10px}
+  .card b{display:block;margin-bottom:8px;font-size:1.05rem;color:var(--navy)}
+  .card p{font-size:.92rem;color:var(--soft)}
+  .heritage{background:var(--cream);border-radius:18px;padding:40px;text-align:center}
+  .heritage p{font-size:1.15rem;font-style:italic;color:#4a4334;max-width:38rem;margin:0 auto}
+  .cta{background:var(--navy);border-radius:18px;color:#fff;padding:44px;text-align:center}
+  .cta h2{font-size:1.8rem;font-weight:800;margin-bottom:10px}
+  .cta h2 em{font-style:italic;color:var(--gold)}
+  .cta p{color:#c3cbdc;max-width:32rem;margin:0 auto 24px}
+  .call{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font-weight:700;padding:15px 32px;border-radius:6px;text-decoration:none;font-size:1.05rem}
+  footer{background:#17203a;color:#8d99b5;padding:38px 0;font-size:.87rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  @media(max-width:880px){.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="brand" href="#top">THE <span>BARBER</span> SHOP</a>
+  <a class="btn btn-n sans" href="#visit">Visit Us</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="pole"><i></i><i></i><i></i></div>
+  <span class="est sans">Blairgowrie Plaza · Conrad Drive</span>
+  <h1>A proper cut, <em>the proper way.</em></h1>
+  <p>No gimmicks, no rush — just an established Randburg barbershop where the chair is comfortable, the blade is sharp, and you leave looking right.</p>
+  <a class="btn btn-n sans" href="#visit">Shop 16, Blairgowrie Plaza</a>
+</div></header>
+
+<section id="services"><div class="wrap">
+  <div class="sec-head"><h2>In the chair</h2><p>Classic barbering, done by hands that have been doing it for years.</p></div>
+  <div class="grid3">
+    <div class="card"><span class="em">✂️</span><b>Cuts</b><p>Classic and modern cuts, finished clean around the ears and neckline.</p></div>
+    <div class="card"><span class="em">🪒</span><b>Shaves &amp; beards</b><p>Beard shaping and proper shaves — the kind you sit back for.</p></div>
+    <div class="card"><span class="em">👦</span><b>Gents &amp; boys</b><p>From first haircuts to the regulars who've been coming for years.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="heritage"><p>"The barbershops that last aren't the flashiest — they're the ones that get the cut right, every time, for years."</p></div>
+</div></section>
+
+<section id="visit" style="padding-top:0"><div class="wrap">
+  <div class="cta">
+    <h2>Walk in, or <em>call ahead.</em></h2>
+    <p class="sans">Shop 16, Blairgowrie Plaza, Conrad Drive, Blairgowrie · Call <b style="color:#fff">011 886 6157</b> to check the chair is free.</p>
+    <a class="call sans" href="#" onclick="return false;">📞 011 886 6157</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot sans">
+  <span>© 2026 The Barber Shop — website mock-up prepared by Somto Okafor</span>
+  <span>011 886 6157 · Blairgowrie, Randburg</span>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMG Plumbing &amp; Electrical — 24/7 Call-Outs in Sandton &amp; Johannesburg</title>
+<style>
+  :root{--ink:#161d26;--soft:#4d5a68;--bg:#f5f7f9;--paper:#fff;--navy:#15293c;--blue:#1673d1;--blue-d:#0f5aa8;--amber:#f5a623;--radius:14px;--shadow:0 12px 30px rgba(20,40,60,.12)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .topbar{background:var(--navy);color:#cfe0ef;font-size:.84rem;padding:8px 0}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .topbar b{color:#ffd47e}
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid #e4eaf0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:850;font-size:1.1rem}
+  .mark{width:36px;height:36px;border-radius:9px;background:var(--blue);display:grid;place-items:center;color:#fff;font-weight:900}
+  .nav-links{display:flex;gap:24px;list-style:none}
+  .nav-links a{text-decoration:none;color:var(--soft);font-size:.9rem;font-weight:650}
+  .btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.93rem;padding:13px 26px;border-radius:10px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+  .btn-b{background:var(--blue);color:#fff}
+  .btn-b:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(22,115,209,.35)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);margin-left:12px}
+  .hero{background:linear-gradient(150deg,#15293c 0%,#1d3a55 60%,#27506f 100%);color:#fff;position:relative;overflow:hidden}
+  .hero-grid{position:absolute;inset:0;opacity:.3;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px}
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding:80px 0 90px}
+  .kicker{display:inline-block;background:rgba(245,166,35,.16);border:2px solid var(--amber);color:#ffd47e;padding:6px 16px;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.1;font-weight:850;margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:var(--amber)}
+  .hero p{color:#c3d4e2;font-size:1.05rem;max-width:32rem;margin-bottom:28px}
+  .stats{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(3,1fr);margin-top:-48px;position:relative;z-index:2}
+  .stat{padding:22px;text-align:center;border-right:1px solid #edf1f5}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-size:1.5rem;font-weight:850;color:var(--navy)}
+  .stat span{font-size:.82rem;color:var(--soft);font-weight:650}
+  section{padding:72px 0}
+  .sec-head{text-align:center;max-width:36rem;margin:0 auto 40px}
+  .sec-head h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:850}
+  .sec-head p{color:var(--soft);margin-top:10px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .svc{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+  .svc h3{font-size:1.05rem;font-weight:850;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .svc h3 .em{font-size:1.3rem}
+  .svc ul{list-style:none}
+  .svc li{padding:7px 0;border-bottom:1px dashed #e8edf2;font-size:.93rem;color:var(--soft)}
+  .svc li:last-child{border-bottom:0}
+  .svc li::before{content:"✓ ";color:var(--blue);font-weight:800}
+  .quote{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px;display:grid;grid-template-columns:1fr 1.1fr;gap:38px;align-items:start}
+  .quote h3{font-size:1.3rem;font-weight:850;margin-bottom:12px}
+  .quote p{color:var(--soft);font-size:.95rem;margin-bottom:16px}
+  .wa{display:inline-flex;align-items:center;gap:10px;background:#22c15e;color:#fff;font-weight:850;padding:13px 24px;border-radius:999px;text-decoration:none;font-size:.95rem}
+  label{display:block;font-size:.78rem;font-weight:800;margin-bottom:6px;color:var(--soft);text-transform:uppercase;letter-spacing:.07em}
+  input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid #dbe4ec;border-radius:10px;font:inherit;font-size:.95rem;background:#fafcfe;margin-bottom:15px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue)}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  footer{background:var(--navy);color:#8fa6ba;padding:38px 0;font-size:.87rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  @media(max-width:880px){.hero-inner{grid-template-columns:1fr;padding:54px 0 70px}.grid2,.quote{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid #edf1f5}.nav-links{display:none}.f-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>⚡ 24/7 emergency call-outs — Sandton &amp; greater Johannesburg</span><span>Call/WhatsApp: <b>068 000 0068</b></span></div></div>
+<nav><div class="wrap nav-inner">
+  <a class="brand" href="#top"><span class="mark">P</span> PMG Plumbing &amp; Electrical</a>
+  <ul class="nav-links"><li><a href="#services">Services</a></li><li><a href="#why">Why PMG</a></li><li><a href="#quote">Get a Quote</a></li></ul>
+  <a class="btn btn-b" href="#quote">Request a Quote</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="kicker">Plumbing + Electrical · One call does both</span>
+      <h1>Burst pipe? Tripping power? <em>We're on the way.</em></h1>
+      <p>Registered plumbers and electricians serving Sandton and all of Johannesburg — upfront quotes, tidy workmanship, and certificates of compliance on every electrical job.</p>
+      <div><a class="btn btn-b" href="#quote">Get a Free Quote</a><a class="btn btn-ghost" href="#services">Our Services</a></div>
+    </div>
+    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plumbing and electrical illustration">
+      <rect x="40" y="60" width="150" height="190" rx="10" fill="#e8f0f8"/>
+      <rect x="60" y="84" width="110" height="16" rx="8" fill="#1673d1"/>
+      <rect x="60" y="112" width="80" height="12" rx="6" fill="#9db8d0"/>
+      <circle cx="115" cy="190" r="36" fill="#15293c"/>
+      <path d="M103 190 l10 10 20 -24" stroke="#f5a623" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M250 70 l60 0 -22 50 50 -8 -78 128 18 -84 -44 6z" fill="#f5a623"/>
+      <rect x="236" y="236" width="150" height="14" rx="7" fill="#1d3a55"/>
+    </svg>
+  </div>
+</header>
+
+<div class="wrap"><div class="stats">
+  <div class="stat"><b>24/7</b><span>Emergency call-outs</span></div>
+  <div class="stat"><b>COC</b><span>Compliance certificates issued</span></div>
+  <div class="stat"><b>1 team</b><span>Plumbing &amp; electrical together</span></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="sec-head"><h2>What we fix and install</h2><p>If it leaks, blocks, trips or sparks — that's us.</p></div>
+  <div class="grid2">
+    <div class="svc"><h3><span class="em">🔧</span> Plumbing</h3><ul>
+      <li>Burst pipes &amp; leak detection</li>
+      <li>Blocked drains &amp; toilets</li>
+      <li>Geyser installation, repair &amp; replacement</li>
+      <li>Bathroom &amp; kitchen installations</li>
+      <li>Taps, valves &amp; pressure problems</li>
+    </ul></div>
+    <div class="svc"><h3><span class="em">⚡</span> Electrical</h3><ul>
+      <li>Tripping power &amp; fault finding</li>
+      <li>DB board repairs &amp; upgrades</li>
+      <li>New plugs, lights &amp; wiring</li>
+      <li>Certificates of Compliance (COC)</li>
+      <li>Stove, geyser &amp; gate motor connections</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="why" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><h2>Why Sandton calls PMG</h2></div>
+  <div class="grid2">
+    <div class="svc"><h3><span class="em">💬</span> Upfront, honest quotes</h3><p style="color:var(--soft);font-size:.93rem">You approve the price before we start. No surprise add-ons when the job is done — the quote is the bill.</p></div>
+    <div class="svc"><h3><span class="em">🧹</span> We leave it cleaner than we found it</h3><p style="color:var(--soft);font-size:.93rem">Boots off at the door, dust sheets down, and rubble removed. Your home is treated like our own.</p></div>
+  </div>
+</div></section>
+
+<section id="quote" style="padding-top:0"><div class="wrap">
+  <div class="quote">
+    <div>
+      <h3>Get a free quote</h3>
+      <p>Describe the problem and we'll reply with an honest price — usually within the hour during the day.</p>
+      <p><b style="color:var(--ink)">Prefer to talk?</b><br>Call or WhatsApp <b style="color:var(--ink)">068 000 0068</b></p>
+      <a class="wa" href="#" onclick="return false;">💬 WhatsApp us a photo of the problem</a>
+    </div>
+    <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ Sent — we\'ll reply with a quote shortly'; this.querySelector('button').disabled=true;">
+      <div class="f-row">
+        <div><label for="q-name">Name</label><input id="q-name" type="text" placeholder="Your name" required></div>
+        <div><label for="q-phone">Phone / WhatsApp</label><input id="q-phone" type="tel" placeholder="068 000 0000" required></div>
+      </div>
+      <label for="q-type">What do you need?</label>
+      <select id="q-type"><option>Plumbing — emergency</option><option>Plumbing — repair or install</option><option>Electrical — fault / tripping</option><option>Electrical — install or COC</option><option>Something else</option></select>
+      <label for="q-msg">Tell us about the job</label>
+      <textarea id="q-msg" rows="3" placeholder="e.g. Geyser leaking in the ceiling, Bryanston"></textarea>
+      <button class="btn btn-b" type="submit" style="width:100%">Send Quote Request</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot">
+  <span>© 2026 PMG Plumbing &amp; Electrical — website mock-up prepared by Somto Okafor</span>
+  <span>068 000 0068 · Sandton, Johannesburg</span>
+</div></footer>
+</body>
+</html>

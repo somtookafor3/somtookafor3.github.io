@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midrand Karate Academy — Traditional Goju-Ryu | Vorna Valley</title>
+<style>
+  :root{--bg:#191817;--paper:#232120;--ink:#f4f2ef;--muted:#aaa59d;--red:#c03529;--red-d:#9a281e;--sand:#d9cdb8;--radius:14px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(25,24,23,.95);backdrop-filter:blur(8px);border-bottom:1px solid #322f2d}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{text-decoration:none;color:var(--ink);font-weight:850;font-size:1.06rem;letter-spacing:.06em}
+  .brand span{color:var(--red)}
+  .btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.93rem;padding:13px 28px;border-radius:10px;text-decoration:none;transition:transform .15s}
+  .btn-r{background:var(--red);color:#fff}
+  .btn-r:hover{transform:translateY(-1px)}
+  .hero{text-align:center;padding:80px 0 60px;position:relative}
+  .enso{width:190px;height:190px;margin:0 auto 26px;position:relative}
+  .enso svg{width:100%;height:100%}
+  .kicker{display:inline-block;border:1px solid rgba(192,53,41,.55);color:#e08a81;padding:7px 18px;border-radius:999px;font-size:.76rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:20px}
+  .hero h1{font-size:clamp(2.2rem,4.8vw,3.4rem);line-height:1.07;font-weight:850;margin-bottom:14px}
+  .hero h1 em{font-style:normal;color:var(--red)}
+  .hero p{color:var(--muted);font-size:1.06rem;max-width:33rem;margin:0 auto 28px}
+  section{padding:64px 0}
+  .sec-head{text-align:center;max-width:36rem;margin:0 auto 40px}
+  .sec-head h2{font-size:clamp(1.7rem,3.2vw,2.2rem);font-weight:850}
+  .sec-head p{color:var(--muted);margin-top:10px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--paper);border:1px solid #322f2d;border-radius:var(--radius);padding:26px;text-align:center}
+  .card .em{font-size:1.6rem;display:block;margin-bottom:10px}
+  .card b{display:block;margin-bottom:6px}
+  .card p{font-size:.88rem;color:var(--muted)}
+  .sensei{background:var(--paper);border:1px solid #322f2d;border-left:5px solid var(--red);border-radius:var(--radius);padding:34px;max-width:46rem;margin:0 auto}
+  .sensei p{font-size:1.05rem;color:var(--ink)}
+  .sensei span{display:block;margin-top:10px;font-size:.9rem;color:var(--muted)}
+  .cta{background:var(--red-d);border-radius:18px;color:#fff;padding:44px;text-align:center}
+  .cta h2{font-size:1.8rem;font-weight:850;margin-bottom:10px}
+  .cta p{color:#f2cfc9;max-width:32rem;margin:0 auto 24px}
+  .wa{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--red-d);font-weight:850;padding:15px 30px;border-radius:999px;text-decoration:none;font-size:1rem}
+  footer{padding:36px 0;color:#7c766d;font-size:.86rem;border-top:1px solid #322f2d}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px}
+  @media(max-width:880px){.grid3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="brand" href="#top">MIDRAND <span>KARATE</span> ACADEMY</a>
+  <a class="btn btn-r" href="#begin">Begin Training</a>
+</div></nav>
+
+<header class="hero wrap" id="top">
+  <div class="enso">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Enso circle">
+      <path d="M100 18 a82 82 0 1 1 -58 24" stroke="#c03529" stroke-width="14" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <span class="kicker">Traditional Goju-Ryu · Vorna Valley</span>
+  <h1>From the age of 5 <em>to 205.</em></h1>
+  <p>Traditional Goju-Ryu karate under Sergio Ferreira Sensei — hard and soft, strength and yielding, taught the way the style was meant to be passed on. Everyone starts as a white belt. Everyone is welcome.</p>
+  <a class="btn btn-r" href="#begin">Book Your First Class</a>
+</header>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><h2>The path, by age</h2></div>
+  <div class="grid3">
+    <div class="card"><span class="em">🧒</span><b>Children (5+)</b><p>Discipline, coordination and confidence — karate gives kids a quiet strength.</p></div>
+    <div class="card"><span class="em">🥋</span><b>Teens &amp; adults</b><p>Kata, kumite and grading through the Goju-Ryu syllabus, at your pace.</p></div>
+    <div class="card"><span class="em">🌿</span><b>The young at heart</b><p>It's in our tagline for a reason — karate is for every body, at every age.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sensei">
+    <p>"Goju means hard and soft. We train both — the strike and the stillness. The belt around your waist only marks where you are on a road that doesn't end."</p>
+    <span>— Sergio Ferreira Sensei, chief instructor · dojo established 2020</span>
+  </div>
+</div></section>
+
+<section id="begin" style="padding-top:0"><div class="wrap">
+  <div class="cta">
+    <h2>The dojo is at 37 Le Roux Avenue</h2>
+    <p>WhatsApp <b>083 400 8169</b> or email <b>info@midrandkarateacademy.co.za</b> to book a first class — come watch, or step on the floor.</p>
+    <a class="wa" href="#" onclick="return false;">💬 Book a first class</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot">
+  <span>© 2026 Midrand Karate Academy — website mock-up prepared by Somto Okafor</span>
+  <span>083 400 8169 · Vorna Valley, Midrand</span>
+</div></footer>
+</body>
+</html>

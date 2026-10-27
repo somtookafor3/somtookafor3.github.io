@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Listings Assistant for Estate Agents — Live Demo | Built by Somto Okafor</title>
+<style>
+  :root{--ink:#122018;--soft:#4f6157;--bg:#f2f7f4;--paper:#fff;--wa:#075e54;--wa2:#128c7e;--wa-green:#25d366;--bubble:#dcf8c6;--chatbg:#e5ddd5;--navy:#13293f;--radius:16px;--shadow:0 14px 34px rgba(10,60,45,.14)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(242,247,244,.96);backdrop-filter:blur(8px);border-bottom:1px solid #dce8e0}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:850;font-size:1.02rem}
+  .mark{width:36px;height:36px;border-radius:50%;background:var(--wa-green);display:grid;place-items:center;color:#fff;font-weight:900}
+  .btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.93rem;padding:13px 26px;border-radius:999px;text-decoration:none;transition:transform .15s}
+  .btn-g{background:var(--wa2);color:#fff}
+  .btn-g:hover{transform:translateY(-1px)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:60px 0 70px}
+  .kicker{display:inline-block;background:#dff0e6;color:var(--wa);padding:7px 16px;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.08;font-weight:850;margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:var(--wa2)}
+  .hero p{color:var(--soft);font-size:1.05rem;max-width:30rem;margin-bottom:24px}
+  .hero-points{list-style:none;margin-bottom:26px}
+  .hero-points li{padding:6px 0;font-size:.95rem;color:var(--soft);font-weight:650}
+  .hero-points li::before{content:"✓ ";color:var(--wa-green);font-weight:900}
+  .phone{width:360px;max-width:100%;margin:0 auto;background:#111;border-radius:38px;padding:12px;box-shadow:var(--shadow)}
+  .screen{border-radius:28px;overflow:hidden;display:flex;flex-direction:column;height:640px;background:var(--chatbg)}
+  .wa-head{background:var(--wa);color:#fff;padding:12px 14px;display:flex;align-items:center;gap:10px}
+  .ava{width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:1.2rem}
+  .wa-head b{font-size:.95rem;display:block}
+  .wa-head span{font-size:.74rem;opacity:.85}
+  .chat{flex:1;overflow-y:auto;padding:14px 10px;display:flex;flex-direction:column;gap:8px}
+  .msg{max-width:84%;padding:9px 12px;border-radius:10px;font-size:.86rem;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.08);white-space:pre-line}
+  .in{background:#fff;align-self:flex-start;border-top-left-radius:2px}
+  .out{background:var(--bubble);align-self:flex-end;border-top-right-radius:2px}
+  .time{display:block;font-size:.64rem;color:#8a948c;text-align:right;margin-top:3px}
+  .inputbar{display:flex;gap:8px;padding:10px;background:#f0f0f0}
+  .inputbar input{flex:1;border:0;border-radius:999px;padding:11px 16px;font:inherit;font-size:.88rem;background:#fff}
+  .inputbar input:focus{outline:2px solid var(--wa2)}
+  .send{width:42px;height:42px;border-radius:50%;border:0;background:var(--wa-green);color:#fff;font-size:1.1rem;cursor:pointer}
+  section{padding:70px 0}
+  .sec-head{text-align:center;max-width:38rem;margin:0 auto 40px}
+  .sec-head h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:850}
+  .sec-head p{color:var(--soft);margin-top:10px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+  .card .em{font-size:1.6rem;display:block;margin-bottom:10px}
+  .card b{display:block;margin-bottom:6px}
+  .card p{font-size:.89rem;color:var(--soft)}
+  .steps{background:var(--navy);border-radius:20px;color:#fff;padding:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;text-align:center}
+  .steps .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:999px;background:var(--wa-green);color:#06301f;font-weight:900;margin-bottom:12px}
+  .steps b{display:block;margin-bottom:6px}
+  .steps p{font-size:.88rem;color:#b9c9d8}
+  .cta{background:linear-gradient(120deg,var(--wa),var(--wa2));border-radius:20px;color:#fff;padding:44px;text-align:center}
+  .cta h2{font-size:1.8rem;font-weight:850;margin-bottom:10px}
+  .cta p{opacity:.95;max-width:34rem;margin:0 auto 24px}
+  .wa-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--wa);font-weight:850;padding:15px 30px;border-radius:999px;text-decoration:none;font-size:1rem}
+  footer{background:#0e1f18;color:#8fae9d;padding:38px 0;font-size:.87rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  @media(max-width:960px){.hero{grid-template-columns:1fr}.grid3,.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="brand" href="#top"><span class="mark">💬</span> WhatsApp Listings Assistant <span style="color:#8fae9d;font-weight:650;font-size:.8rem">· LIVE DEMO</span></a>
+  <a class="btn btn-g" href="#get">Get This For Your Agency</a>
+</div></nav>
+
+<header class="wrap hero" id="top">
+  <div>
+    <span class="kicker">For estate agents · Runs on your WhatsApp Business number</span>
+    <h1>Every listing question, <em>answered in seconds.</em></h1>
+    <p>"Is it still available?" "Are pets allowed?" "What are the levies?" — the same questions, twenty times a week, often after hours. This assistant knows every one of your active listings and answers instantly, so buyers aren't left waiting and your agents aren't typing the same reply at 21:00.</p>
+    <ul class="hero-points">
+      <li>Knows every mandate: price, beds, levies, pets, parking, show days</li>
+      <li>Answers instantly, 24/7 — buyers never wait for the morning</li>
+      <li>Sends the brochure and location pin on request</li>
+      <li>Anything beyond a question — viewings, offers — goes straight to your agent with the full chat</li>
+    </ul>
+    <a class="btn btn-g" href="#get">See Pricing</a>
+    <p style="margin-top:14px;font-size:.85rem"><b>👉 This demo works — type in the phone.</b> Try "Are pets allowed?" or "What are the levies?"</p>
+  </div>
+
+  <div class="phone"><div class="screen">
+    <div class="wa-head"><span class="ava">🏠</span><div><b>Horizon Properties</b><span>Listings assistant · replies instantly</span></div></div>
+    <div class="chat" id="chat">
+      <div class="msg out">Hi, is the 2 bed in Lonehill still available?<span class="time">21:12 ✓✓</span></div>
+      <div class="msg in">Hi! 👋 Yes — the 2-bedroom garden apartment in Lonehill is still available.
+
+🛏 2 bed · 🛁 2 bath · 🚗 1 covered bay
+💰 R1,495,000
+📍 14 Acacia Road, Lonehill<span class="time">21:12</span></div>
+      <div class="msg out">Are pets allowed? And what are the levies?<span class="time">21:13 ✓✓</span></div>
+      <div class="msg in">Good questions 🐾 Small pets are allowed with body-corporate approval (one dog or cat). Levies are R1,850/m and rates are about R980/m.<span class="time">21:13</span></div>
+      <div class="msg out">Can you send the brochure?<span class="time">21:13 ✓✓</span></div>
+      <div class="msg in">Sent! 📄 Brochure with the full photo set, plus a location pin 📍
+
+If you'd like to view it, I'll pass you to agent Thandi with our chat — she arranges all viewings and will WhatsApp you first thing tomorrow. Want me to do that?<span class="time">21:14</span></div>
+    </div>
+    <div class="inputbar">
+      <input id="inp" type="text" placeholder="Type a message…" onkeydown="if(event.key==='Enter')send()">
+      <button class="send" onclick="send()" aria-label="Send">➤</button>
+    </div>
+  </div></div>
+</header>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><h2>It answers questions. Your agents do the selling.</h2><p>No gimmicks — the assistant handles the repetitive listing questions that eat your agents' evenings, and hands everything else straight to a human.</p></div>
+  <div class="grid3">
+    <div class="card"><span class="em">🏠</span><b>Knows every listing</b><p>Price, beds, baths, levies, rates, pets, parking, fibre, show-day times — loaded from your current mandates.</p></div>
+    <div class="card"><span class="em">⚡</span><b>Instant, 24/7</b><p>Evenings, weekends and show-day rushes — every question gets its answer in seconds.</p></div>
+    <div class="card"><span class="em">📄</span><b>Brochures &amp; pins on demand</b><p>Asks for the brochure? Sent. Needs the address? Location pin, instantly.</p></div>
+    <div class="card"><span class="em">🤝</span><b>Agent handover</b><p>Viewing requests, offers, anything beyond a question — your agent takes over with the full transcript.</p></div>
+    <div class="card"><span class="em">🔄</span><b>Always current</b><p>Sold a unit? Price dropped? The assistant updates with your mandate list — it never quotes stale stock.</p></div>
+    <div class="card"><span class="em">🔒</span><b>Your number, your voice</b><p>Runs on your existing WhatsApp Business number, answering in your agency's tone — clients notice nothing but the speed.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="steps">
+    <div><span class="n">1</span><b>Connect</b><p>It runs on your existing WhatsApp Business number — nothing changes for your clients.</p></div>
+    <div><span class="n">2</span><b>Load your listings</b><p>We load your active mandates and FAQs. You approve how it answers before it goes live.</p></div>
+    <div><span class="n">3</span><b>It answers</b><p>Listing questions handled instantly — your agents only step in where it counts.</p></div>
+  </div>
+</div></section>
+
+<section id="get" style="padding-top:0"><div class="wrap">
+  <div class="cta">
+    <h2>Put it on your number this week</h2>
+    <p>Setup from R5,500 once-off, loaded with your listings — plus a light monthly plan to keep it current as your stock changes. You never pay me directly: payment goes through Fiverr, released only when it's answering on your number and you're happy. WhatsApp Somto on <b>081 378 8760</b> for a live walkthrough on your own phone.</p>
+    <a class="wa-btn" href="#" onclick="return false;">💬 Book a live walkthrough</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot">
+  <span>WhatsApp Listings Assistant demo — built by Somto Okafor · somtookafor3.github.io</span>
+  <span>081 378 8760 · Sandton, Johannesburg</span>
+</div></footer>
+
+<script>
+const chat=document.getElementById('chat');
+const INTENTS=[
+ {k:['available','still','lonehill','2 bed','apartment','flat'],r:"Yes! 👋 The 2-bedroom garden apartment in Lonehill is still available.\n\n🛏 2 bed · 🛁 2 bath · 🚗 1 covered bay\n💰 R1,495,000\n📍 14 Acacia Road, Lonehill"},
+ {k:['pet','dog','cat'],r:"Small pets are allowed with body-corporate approval 🐾 — one dog or cat per unit. I can note it for the agent if pets are part of your decision."},
+ {k:['lev','rates','monthly cost'],r:"Levies are R1,850/m and municipal rates are approximately R980/m. Both are up to date — no special levies currently in place."},
+ {k:['price','cost','how much','negoti'],r:"The listing price is R1,495,000. Offers go through agent Thandi — I can pass you over with our chat if you'd like to discuss one."},
+ {k:['size','sqm','square','big','bath','bedroom'],r:"It's 92m² — 2 bedrooms (main en-suite), 2 bathrooms, open-plan kitchen/living, and a private north-facing garden of about 40m²."},
+ {k:['parking','garage','bay','car'],r:"One covered parking bay is included, with visitor parking inside the complex gate."},
+ {k:['security','safe','guard'],r:"The complex has 24-hour manned security, access control and electric fencing. It's one of the quieter, well-run complexes in Lonehill."},
+ {k:['fibre','internet','wifi'],r:"Yes — the complex is fibre-ready (Vuma and Openserve both live in the area), so you can activate with most ISPs."},
+ {k:['school','creche'],r:"You're close to Lonehill Primary and several good crèches; Crawford Fourways is about 10 minutes away."},
+ {k:['show','open house','sunday'],r:"The next show day is Sunday 14:00–17:00 at 14 Acacia Road. No appointment needed — just come through. 🏠"},
+ {k:['brochure','photos','pictures','pics','send'],r:"Sent! 📄 Brochure with the full photo set, plus a location pin 📍 Anything else you'd like to know about the unit?"},
+ {k:['address','where','location','area'],r:"It's at 14 Acacia Road, Lonehill — quiet cul-de-sac, 5 minutes from Lonehill Shopping Centre. I've sent you a location pin 📍"},
+ {k:['view','visit','see it','appointment','offer','buy'],r:"That's one for a human! 🤝 I'll pass you to agent Thandi with our full chat — she arranges all viewings and offers, and will WhatsApp you first thing tomorrow (08:00). Nothing to repeat on your side."},
+ {k:['agent','human','person','speak','call'],r:"Of course — handing you to agent Thandi with the full conversation, so you won't repeat a thing. She's online 08:00–18:00 and will pick up right where we left off."},
+ {k:['hours','open','office'],r:"The office is open Mon–Fri 08:00–17:00 and Sat 09:00–13:00 — but I'm here for listing questions 24/7. Ask away!"},
+ {k:['hi','hello','hey','morning','afternoon','evening'],r:"Hi there! 👋 I'm the Horizon Properties listings assistant. Ask me anything about our listings — availability, prices, levies, pets, sizes, show days — and I'll answer right away."},
+ {k:['thanks','thank','great','perfect'],r:"A pleasure! 😊 Any other listing questions, I'm here day or night. 🏡"}
+];
+function reply(text){
+ const t=text.toLowerCase();
+ for(const i of INTENTS){ if(i.k.some(k=>t.includes(k))) return i.r; }
+ return "That one needs a human — I'll flag it for agent Thandi so you get a proper answer (she replies 08:00–18:00). Meanwhile I can tell you anything about the listing: price, levies, pets, sizes, show days. 😊";
+}
+function now(){const d=new Date();return String(d.getHours()).padStart(2,'0')+":"+String(d.getMinutes()).padStart(2,'0');}
+function add(cls,text){
+ const m=document.createElement('div');m.className='msg '+cls;
+ m.textContent=text;
+ const s=document.createElement('span');s.className='time';s.textContent=now()+(cls==='out'?' ✓✓':'');
+ m.appendChild(s);chat.appendChild(m);chat.scrollTop=chat.scrollHeight;
+}
+function send(){
+ const inp=document.getElementById('inp');const v=inp.value.trim();if(!v)return;
+ add('out',v);inp.value='';
+ setTimeout(()=>add('in',reply(v)), 650);
+}
+</script>
+</body>
+</html>

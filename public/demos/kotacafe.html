@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kota Cafe — Home of the BMW Kota | Diepkloof &amp; Meadowlands, Soweto</title>
+<style>
+  :root{--ink:#26150e;--soft:#6e5243;--bg:#fff8f0;--paper:#fff;--char:#2d1a10;--red:#d83a1f;--red-d:#b02a12;--yellow:#ffc21d;--radius:16px;--shadow:0 12px 30px rgba(120,50,20,.14)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,248,240,.96);backdrop-filter:blur(8px);border-bottom:1px solid #f3e4d2}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:850;font-size:1.08rem}
+  .mark{width:36px;height:36px;border-radius:9px;background:var(--red);display:grid;place-items:center;color:#fff;font-weight:900}
+  .btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.93rem;padding:13px 26px;border-radius:999px;text-decoration:none;transition:transform .15s}
+  .btn-r{background:var(--red);color:#fff}
+  .btn-r:hover{transform:translateY(-1px)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding:66px 0 60px}
+  .kicker{display:inline-block;background:#ffefc9;color:#9c6a00;padding:7px 16px;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px}
+  .hero h1{font-size:clamp(2.2rem,4.6vw,3.3rem);line-height:1.08;font-weight:850;margin-bottom:16px}
+  .hero h1 em{font-style:normal;color:var(--red)}
+  .hero p{color:var(--soft);font-size:1.05rem;max-width:30rem;margin-bottom:26px}
+  .hero-note{margin-top:20px;font-size:.88rem;color:var(--soft);font-weight:650}
+  .hero-note b{color:var(--red-d)}
+  .hero-art{border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+  section{padding:70px 0}
+  .sec-head{text-align:center;max-width:36rem;margin:0 auto 40px}
+  .sec-head h2{font-size:clamp(1.7rem,3.2vw,2.2rem);font-weight:850}
+  .sec-head p{color:var(--soft);margin-top:10px}
+  .feature{background:var(--char);border-radius:22px;color:#fff;padding:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+  .feature h2{font-size:2rem;font-weight:850;margin-bottom:10px}
+  .feature h2 em{font-style:normal;color:var(--yellow)}
+  .feature p{color:#e3cdb8;margin-bottom:8px}
+  .price{font-size:3rem;font-weight:900;color:var(--yellow)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px;text-align:center}
+  .card .em{font-size:1.8rem;display:block;margin-bottom:10px}
+  .card b{display:block;margin-bottom:6px}
+  .card p{font-size:.89rem;color:var(--soft)}
+  .cta{background:linear-gradient(120deg,var(--red),#e8681f);border-radius:20px;color:#fff;padding:44px;text-align:center}
+  .cta h2{font-size:1.8rem;font-weight:850;margin-bottom:10px}
+  .cta p{opacity:.95;max-width:32rem;margin:0 auto 24px}
+  .wa{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#b02a12;font-weight:850;padding:15px 30px;border-radius:999px;text-decoration:none;font-size:1rem}
+  footer{background:#241209;color:#b89a85;padding:38px 0;font-size:.87rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  @media(max-width:880px){.hero,.feature{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.hero{padding:44px 0 36px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="brand" href="#top"><span class="mark">K</span> The Kota Cafe</a>
+  <a class="btn btn-r" href="#order">Order Now</a>
+</div></nav>
+
+<header class="wrap hero" id="top">
+  <div>
+    <span class="kicker">Diepkloof Zone 2 · Now also in Meadowlands</span>
+    <h1>Soweto's kota, <em>done properly.</em></h1>
+    <p>Fresh bread, full fillings, no shortcuts. The Kota Cafe has been stacking Diepkloof's favourite kotas since 2020 — now with a second branch in Meadowlands and delivery on Uber Eats.</p>
+    <a class="btn btn-r" href="#order">See the Menu &amp; Order</a>
+    <div class="hero-note">⭐ <b>4.7/5 from customers on Grubbio</b> · 068 046 2887</div>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kota illustration">
+      <rect width="520" height="400" fill="#ffe9c9"/>
+      <rect x="120" y="110" width="280" height="200" rx="26" fill="#f3c97e"/>
+      <rect x="120" y="110" width="280" height="54" rx="26" fill="#f7d79b"/>
+      <rect x="140" y="170" width="240" height="26" rx="13" fill="#d83a1f"/>
+      <rect x="140" y="204" width="240" height="22" rx="11" fill="#ffc21d"/>
+      <rect x="140" y="234" width="240" height="24" rx="12" fill="#7fae3c"/>
+      <rect x="140" y="266" width="240" height="20" rx="10" fill="#b4552c"/>
+      <circle cx="420" cy="90" r="34" fill="#d83a1f"/>
+      <text x="420" y="99" text-anchor="middle" font-size="26" font-weight="900" fill="#fff">R50</text>
+    </svg>
+  </div>
+</header>
+
+<section style="padding-top:10px"><div class="wrap">
+  <div class="feature">
+    <div>
+      <h2>The <em>BMW</em> Kota</h2>
+      <p>Double Russians, vienna, egg, ham, polony and cheese — the one everyone orders, the one that made our name.</p>
+      <p style="color:#fff;font-weight:800">The full house, stacked fresh to order.</p>
+    </div>
+    <div style="text-align:center"><span class="price">R50</span><p style="color:#e3cdb8">Our signature kota</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><h2>Find us, order us</h2></div>
+  <div class="grid3">
+    <div class="card"><span class="em">📍</span><b>Diepkloof Zone 2</b><p>The original — where the BMW was born.</p></div>
+    <div class="card"><span class="em">📍</span><b>Meadowlands</b><p>Our second branch, same stack, same standards.</p></div>
+    <div class="card"><span class="em">🛵</span><b>Uber Eats</b><p>Too comfortable to come through? We'll come to you.</p></div>
+  </div>
+</div></section>
+
+<section id="order" style="padding-top:0"><div class="wrap">
+  <div class="cta">
+    <h2>Hungry? Order ahead.</h2>
+    <p>Call or WhatsApp <b>068 046 2887</b> and your kota is waiting when you arrive — no queue, no wait.</p>
+    <a class="wa" href="#" onclick="return false;">💬 WhatsApp your order</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot">
+  <span>© 2026 The Kota Cafe — website mock-up prepared by Somto Okafor</span>
+  <span>068 046 2887 · Diepkloof &amp; Meadowlands, Soweto</span>
+</div></footer>
+</body>
+</html>
