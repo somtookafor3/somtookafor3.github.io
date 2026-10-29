@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo+Black&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#06110f;--soft:#4c6460;--bg:#f2fbf8;--paper:#fff;--line:#dcefe9;--lime:#c9f31d;--teal:#064d43;--ink2:#0a2420}
+  :root{--ink:#06110f;--soft:#4c6460;--bg:#f2fbf8;--paper:#fff;--line:#dcefe9;--gold:#c9a84a;--teal:#06201c;--ink2:#0a2420}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
@@ -16,57 +16,65 @@
   [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
   [data-reveal].in{opacity:1;transform:translateY(0)}
   .grain{position:relative}
-  .grain::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.06;mix-blend-mode:overlay;pointer-events:none}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
-  nav{padding:24px 0}
+  .grain::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.07;mix-blend-mode:overlay;pointer-events:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  nav{padding:26px 0}
   .nav-inner{display:flex;align-items:center;justify-content:space-between}
-  .brand{text-decoration:none;color:var(--ink);font-weight:900;font-size:1.3rem;letter-spacing:-.02em;text-transform:uppercase}
-  .btn{display:inline-block;text-decoration:none;font-weight:900;font-size:.82rem;letter-spacing:.02em;padding:13px 22px;background:var(--ink);color:var(--lime);border-radius:0}
+  .brand{text-decoration:none;color:var(--ink);font-weight:700;font-size:1.2rem;letter-spacing:.02em}
+  .brand b{font-family:'Archivo Black',sans-serif;color:var(--gold)}
+  .btn{display:inline-block;text-decoration:none;font-weight:500;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;background:var(--ink);color:var(--gold);border:1px solid var(--ink);transition:all .3s ease}
+  .btn:hover{background:transparent;color:var(--ink)}
+  .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .btn-gold{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+  .btn-gold:hover{background:transparent;color:var(--gold)}
+  .btn-line:hover{background:#fff;color:var(--ink)}
 
   .slab{background:var(--teal);color:#fff;position:relative;overflow:hidden}
   .slab-inner{display:grid;grid-template-columns:1.3fr .7fr}
-  .slab-text{padding:70px 0 90px}
-  .count{font-weight:900;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:18px;display:block}
-  h1{font-size:clamp(2.6rem,6.4vw,4.6rem);font-weight:900;line-height:.98;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:26px}
-  h1 span{color:var(--lime)}
-  .slab-text p{color:#bfe3da;font-size:1.08rem;max-width:30rem;margin-bottom:30px}
+  .slab-text{padding:84px 0 100px}
+  .count{font-weight:500;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:22px;display:block}
+  h1{font-size:clamp(2.4rem,5.6vw,4rem);font-weight:400;line-height:1.02;letter-spacing:-.01em;margin-bottom:28px;text-transform:none}
+  h1 span{color:var(--gold);font-style:italic}
+  .slab-text p{color:#9ec4ba;font-size:1.06rem;max-width:30rem;margin-bottom:34px;font-weight:400}
 
   .blockcol{background:var(--ink2);display:flex;flex-direction:column;justify-content:flex-end}
   .blockrow{display:flex;height:33.33%}
-  .blockrow div{flex:1;border:1px solid rgba(255,255,255,.06)}
-  .blockrow div:nth-child(1){background:var(--lime)}
-  .blockrow div:nth-child(2){background:#0a382f}
-  .blockrow div:nth-child(3){background:#0e4a3d}
+  .blockrow div{flex:1;border:1px solid rgba(255,255,255,.06);position:relative;overflow:hidden}
 
-  .ticker{background:var(--lime);color:var(--ink);overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:900;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase}
-  .ticker span{padding:0 30px}
+  .marquee{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:14px 0;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
+  .marquee span{padding:0 30px}
 
-  section{padding:70px 0}
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-  .split .tag{font-weight:900;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
-  .split h2{font-size:2rem;font-weight:900;letter-spacing:-.01em;margin-bottom:16px}
+  section{padding:88px 0}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .split .tag{font-weight:700;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .split .tag::before{content:"";width:24px;height:1px;background:var(--teal)}
+  .split h2{font-size:2rem;font-weight:400;letter-spacing:-.01em;margin-bottom:18px;font-family:'Archivo Black',sans-serif}
   .split p{color:var(--soft)}
   .reel{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .reel div{aspect-ratio:3/4;border-radius:2px}
-  .reel div:nth-child(1){background:linear-gradient(160deg,#c9f31d,#8fcf0a)}
-  .reel div:nth-child(2){background:linear-gradient(160deg,#0a382f,#064d43)}
-  .reel div:nth-child(3){background:linear-gradient(160deg,#0e4a3d,#0a2420)}
+  .reel div{aspect-ratio:3/4;position:relative;overflow:hidden}
+  .reel .lbl{position:absolute;left:12px;bottom:10px;color:#fff;font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
 
-  .close{background:var(--ink);color:#fff;padding:90px 0;text-align:center}
-  .close h2{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:900;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:22px}
-  .close h2 span{color:var(--lime)}
-  .close .btn{background:var(--lime);color:var(--ink);font-size:.95rem;padding:17px 34px}
+  .strip{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:50px 0;margin:0 0 0}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stats>div{text-align:center;padding:0 20px}
+  .stats>div+div{border-left:1px solid var(--line)}
+  .stats b{font-family:'Archivo Black',sans-serif;font-size:2rem;display:block;color:var(--teal)}
+  .stats span{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
 
-  footer{padding:30px 0;border-top:1px solid var(--line)}
+  .close{background:var(--ink);color:#fff;padding:100px 0;text-align:center;position:relative;overflow:hidden}
+  .close h2{font-size:clamp(2.1rem,4.8vw,3.4rem);font-weight:400;letter-spacing:-.01em;margin-bottom:28px;font-family:'Archivo Black',sans-serif;text-transform:none}
+  .close h2 span{color:var(--gold);font-style:italic}
+
+  footer{padding:36px 0;border-top:1px solid var(--line)}
   .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:var(--soft)}
 
-  @media(max-width:860px){.slab-inner{grid-template-columns:1fr}.blockcol{display:none}.split{grid-template-columns:1fr}}
+  @media(max-width:860px){.slab-inner{grid-template-columns:1fr}.blockcol{display:none}.split{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stats>div+div{border-left:0;border-top:1px solid var(--line);padding-top:20px}}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap nav-inner">
-  <a class="brand" href="#top">TSK</a>
+  <a class="brand" href="#top">T<b>SK</b></a>
   <a class="btn" href="#book">Book Now</a>
 </div></nav>
 
@@ -76,35 +84,55 @@
       <span class="count">3.9K on Facebook</span>
       <h1>The cut Soweto <span>talks about.</span></h1>
       <p>Nearly 4,000 people already follow TSK for the work — now Google can find you too, not just the people who already know where to look.</p>
-      <a class="btn" style="background:#22c15e;color:#fff" href="#" onclick="return false;">💬 WhatsApp 062 972 1077</a>
+      <a class="btn btn-line" href="#" onclick="return false;">WhatsApp 062 972 1077 →</a>
     </div>
     <div class="blockcol">
-      <div class="blockrow"><div></div><div></div><div></div></div>
-      <div class="blockrow"><div></div><div></div><div></div></div>
-      <div class="blockrow"><div></div><div></div><div></div></div>
+      <div class="blockrow">
+        <div style="background:linear-gradient(160deg,var(--gold),#8a6d2e)"></div>
+        <div style="background:linear-gradient(160deg,#0a382f,#06201c)"></div>
+        <div style="background:linear-gradient(160deg,#0e4a3d,#0a2420)"></div>
+      </div>
+      <div class="blockrow">
+        <div style="background:linear-gradient(160deg,#0a382f,var(--gold))"></div>
+        <div style="background:linear-gradient(160deg,#0e4a3d,#06201c)"></div>
+        <div style="background:linear-gradient(160deg,var(--gold),#0a2420)"></div>
+      </div>
+      <div class="blockrow">
+        <div style="background:linear-gradient(160deg,#0e4a3d,#0a2420)"></div>
+        <div style="background:linear-gradient(160deg,var(--gold),#0a382f)"></div>
+        <div style="background:linear-gradient(160deg,#06201c,#0e4a3d)"></div>
+      </div>
     </div>
   </div>
 </header>
 
-<div class="ticker"><span>★ BOOK ON WHATSAPP</span><span>★ WALK-INS WELCOME</span><span>★ BOOK ON WHATSAPP</span><span>★ WALK-INS WELCOME</span><span>★ BOOK ON WHATSAPP</span><span>★ WALK-INS WELCOME</span></div>
+<div class="marquee"><span>★ BOOK ON WHATSAPP</span><span>★ WALK-INS WELCOME</span><span>★ 3.9K FOLLOWERS</span><span>★ BOOK ON WHATSAPP</span><span>★ WALK-INS WELCOME</span><span>★ 3.9K FOLLOWERS</span></div>
+
+<div class="strip"><div class="wrap stats" data-reveal>
+  <div><b>3.9K</b><span>Facebook Followers</span></div>
+  <div><b>Soweto</b><span>Home Turf</span></div>
+  <div><b>7 Days</b><span>Walk-Ins Welcome</span></div>
+</div></div>
 
 <section>
   <div class="wrap split" data-reveal>
     <div class="reel">
-      <div></div><div></div><div></div>
+      <div class="grain" style="background:linear-gradient(170deg,var(--gold),#8a6d2e)"><span class="lbl">Cuts</span></div>
+      <div class="grain" style="background:linear-gradient(170deg,#0a382f,#06201c)"><span class="lbl">Braids</span></div>
+      <div class="grain" style="background:linear-gradient(170deg,#0e4a3d,#0a2420)"><span class="lbl">Colour</span></div>
     </div>
     <div>
       <div class="tag">The work</div>
-      <h2>Cuts, braids, colour — send a photo, we'll match it.</h2>
+      <h2>Send a photo, we'll match it.</h2>
       <p>Tell us the style on WhatsApp — a photo, a reference, a vibe — and we'll get you booked in with the right stylist and time.</p>
     </div>
   </div>
 </section>
 
-<section class="close" id="book" data-reveal>
+<section class="close grain" id="book" data-reveal>
   <div class="wrap">
     <h2>Your chair is <span>one text away.</span></h2>
-    <a class="btn" href="#" onclick="return false;">WhatsApp 062 972 1077</a>
+    <a class="btn btn-gold" href="#" onclick="return false;">WhatsApp 062 972 1077</a>
   </div>
 </section>
 
