@@ -5,108 +5,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swazi Makoti Boutique — Traditional Bridal Wear, Johannesburg CBD</title>
 <style>
-  :root{--ink:#241209;--soft:#6b4a38;--bg:#fdf6ef;--paper:#fff;--dark:#2b1206;--maroon:#8a1f2b;--gold:#c9941f;--radius:16px;--shadow:0 12px 30px rgba(120,60,20,.14)}
+  :root{--ink:#1c1410;--soft:#766255;--bg:#f7f2ea;--paper:#fffdfa;--line:#e4d7c4;--maroon:#7a1322;--gold:#a9792e;--cream:#efe4d1}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  nav{position:sticky;top:0;z-index:50;background:rgba(253,246,239,.96);backdrop-filter:blur(8px);border-bottom:1px solid #f0ddc8}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{text-decoration:none;color:var(--ink);font-weight:850;font-size:1.12rem}
-  .brand span{color:var(--maroon)}
-  .btn{display:inline-block;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:.93rem;padding:13px 26px;border-radius:999px;text-decoration:none;transition:transform .15s}
-  .btn-m{background:var(--maroon);color:#fff}
-  .btn-m:hover{transform:translateY(-1px)}
-  .hero{background:linear-gradient(150deg,#2b1206 0%,#4a1a10 60%,#6b2318 100%);color:#fff}
-  .hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding:76px 0 86px}
-  .kicker{display:inline-block;background:rgba(201,148,31,.18);border:2px solid var(--gold);color:#f0d68f;padding:6px 16px;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
-  .hero h1{font-size:clamp(2.1rem,4.4vw,3.2rem);line-height:1.1;font-weight:850;margin-bottom:16px}
-  .hero h1 em{font-style:normal;background:linear-gradient(100deg,#c9941f,#e8c25e);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p{color:#e3c9b8;font-size:1.05rem;max-width:31rem;margin-bottom:28px}
-  .stars{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:24px;margin-top:-46px;position:relative;z-index:2;text-align:center}
-  .stars b{display:block;font-size:1.4rem;font-weight:850;color:var(--dark)}
-  .stars span{font-size:.82rem;color:var(--soft);font-weight:650}
-  section{padding:70px 0}
-  .sec-head{text-align:center;max-width:36rem;margin:0 auto 40px}
-  .sec-head h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:850}
-  .sec-head p{color:var(--soft);margin-top:10px}
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
-  .card .em{font-size:1.6rem;display:block;margin-bottom:10px}
-  .card b{display:block;margin-bottom:6px}
-  .card p{font-size:.89rem;color:var(--soft)}
-  .press{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px 34px;display:flex;gap:18px;align-items:flex-start}
-  .press .em{font-size:1.8rem}
-  .press b{display:block;margin-bottom:4px}
-  .press p{font-size:.92rem;color:var(--soft)}
-  .cta{background:var(--dark);border-radius:20px;color:#fff;padding:44px;text-align:center}
-  .cta h2{font-size:1.8rem;font-weight:850;margin-bottom:10px}
-  .cta h2 em{font-style:normal;color:var(--gold)}
-  .cta p{color:#e3c9b8;max-width:32rem;margin:0 auto 24px}
-  .wa{display:inline-flex;align-items:center;gap:10px;background:#22c15e;color:#fff;font-weight:850;padding:15px 30px;border-radius:999px;text-decoration:none;font-size:1rem}
-  footer{background:#1f0d05;color:#c9ac98;padding:38px 0;font-size:.87rem}
-  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-  @media(max-width:880px){.hero-inner{grid-template-columns:1fr;padding:50px 0 66px}.grid3{grid-template-columns:1fr}.press{flex-direction:column}}
+  body{font-family:Georgia,"Iowan Old Style","Times New Roman",serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+  nav{padding:30px 0;border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .word{text-decoration:none;color:var(--ink);font-size:1.3rem;letter-spacing:.03em}
+  .word b{font-weight:400;border-bottom:1px solid var(--maroon)}
+  .nav-cta{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;text-decoration:none;color:var(--maroon);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--maroon);padding-bottom:3px}
+
+  .hero{padding:90px 0 70px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .eyebrow{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:.76rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  h1{font-weight:400;font-size:clamp(2.4rem,4.4vw,3.6rem);line-height:1.08;letter-spacing:-.01em;margin-bottom:26px}
+  h1 i{font-style:italic;color:var(--maroon)}
+  .lede{font-size:1.14rem;color:var(--soft);max-width:30rem;margin-bottom:34px}
+  .wa-link{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;font-size:.95rem;border:1px solid var(--ink);padding:16px 30px}
+  .wa-link:hover{background:var(--ink);color:#fff}
+
+  .panel{aspect-ratio:4/5;position:relative;overflow:hidden;background:
+    radial-gradient(circle at 70% 20%, #c79a4a 0%, transparent 45%),
+    radial-gradient(circle at 20% 80%, #7a1322 0%, transparent 55%),
+    linear-gradient(160deg,#2b120f 0%,#4a1a16 50%,#6b2419 100%)}
+  .panel .tag{position:absolute;left:24px;bottom:24px;color:#f3e4cf;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+  .beadline{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-evenly;align-items:center}
+  .beadline i{width:10px;height:10px;border-radius:50%}
+
+  .press{background:var(--cream);padding:56px 0}
+  .press-inner{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:flex-start}
+  .press-mark{font-family:Georgia,serif;font-size:4.2rem;line-height:1;color:var(--maroon);font-style:italic}
+  .press blockquote{font-size:1.3rem;font-style:italic;line-height:1.5;max-width:38rem;margin-bottom:10px}
+  .press cite{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-style:normal;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);font-weight:700}
+
+  .book{padding:90px 0}
+  .book-head{max-width:34rem;margin-bottom:50px}
+  .book-head .eyebrow{margin-bottom:14px}
+  .book-head h2{font-weight:400;font-size:2rem}
+  .shelf{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+  .shelf>div{padding:34px 28px 0;border-right:1px solid var(--line)}
+  .shelf>div:last-child{border-right:0}
+  .shelf .num{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:.74rem;font-weight:800;letter-spacing:.14em;color:var(--gold);margin-bottom:14px}
+  .shelf h3{font-weight:400;font-size:1.3rem;margin-bottom:10px}
+  .shelf p{color:var(--soft);font-size:.94rem}
+
+  .close{background:var(--ink);color:#f3e9da;padding:80px 0;text-align:center}
+  .close .eyebrow{color:#c79a4a;justify-content:center;display:flex}
+  .close h2{font-weight:400;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:18px}
+  .close p{color:#bcac97;max-width:30rem;margin:0 auto 30px}
+  .close .wa-link{border-color:#f3e9da;color:#f3e9da}
+  .close .wa-link:hover{background:#f3e9da;color:var(--ink)}
+
+  footer{padding:30px 0;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;font-size:.8rem;color:var(--soft)}
+
+  @media(max-width:860px){.hero{grid-template-columns:1fr;padding:60px 0}.shelf{grid-template-columns:1fr}.shelf>div{border-right:0;border-bottom:1px solid var(--line);padding-bottom:30px}.press-inner{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+
 <nav><div class="wrap nav-inner">
-  <a class="brand" href="#top">Swazi <span>Makoti</span> Boutique</a>
-  <a class="btn btn-m" href="#book">Order on WhatsApp</a>
+  <a class="word" href="#top">Swazi <b>Makoti</b> Boutique</a>
+  <a class="nav-cta" href="#book">Enquire</a>
 </div></nav>
 
-<header class="hero" id="top">
-  <div class="wrap hero-inner">
-    <div>
-      <span class="kicker">The Markade, Johannesburg CBD · As seen in Bona</span>
-      <h1>Traditional bridal wear, <em>made for the moment.</em></h1>
-      <p>Founder Zandiswa Msikinya and her team craft Swazi and traditional bridal sets for weddings, umembeso and makoti ceremonies nationwide — the same craftsmanship that dressed Sindi Dlathu for "Queendom."</p>
-      <a class="btn btn-m" href="#book">WhatsApp 078 788 1624</a>
+<header class="hero wrap" id="top">
+  <div>
+    <div class="eyebrow sans">Est. The Markade · Johannesburg CBD</div>
+    <h1>Bridal dress for <i>umembeso</i>, built to be remembered.</h1>
+    <p class="lede">Founder Zandiswa Msikinya hand-finishes Swazi and traditional bridal sets for weddings and makoti ceremonies nationwide — the same craftsmanship chosen to dress actress Sindi Dlathu for <i>Queendom</i>.</p>
+    <a class="wa-link" href="#" onclick="return false;">WhatsApp 078 788 1624 →</a>
+  </div>
+  <div class="panel">
+    <div class="beadline">
+      <i style="background:#eab308"></i><i style="background:#f3e9da"></i><i style="background:#eab308"></i><i style="background:#c79a4a"></i><i style="background:#f3e9da"></i>
     </div>
-    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Traditional bridal wear illustration">
-      <rect x="60" y="40" width="300" height="220" rx="18" fill="#4a1a10"/>
-      <path d="M210 70 l60 90 h-30 l20 80 h-100 l20 -80 h-30 z" fill="#c9941f"/>
-      <rect x="170" y="90" width="80" height="16" rx="8" fill="#8a1f2b"/>
-      <circle cx="210" cy="60" r="18" fill="#e8c25e"/>
-      <rect x="110" y="200" width="60" height="10" rx="5" fill="#e8c25e"/>
-      <rect x="250" y="200" width="60" height="10" rx="5" fill="#e8c25e"/>
-    </svg>
+    <span class="tag">Umembeso · 2026 Collection</span>
   </div>
 </header>
 
-<div class="wrap"><div class="stars">
-  <div><b>70K</b><span>Facebook followers</span></div>
-  <div><b>Bona</b><span>Magazine feature</span></div>
-  <div><b>Nationwide</b><span>WhatsApp orders &amp; delivery</span></div>
-</div></div>
-
-<section id="services"><div class="wrap">
-  <div class="sec-head"><h2>Every set, hand-finished</h2><p>From umembeso to the full makoti look — tell us the ceremony and we'll build the set around it.</p></div>
-  <div class="grid3">
-    <div class="card"><span class="em">👑</span><b>Full bridal sets</b><p>Complete makoti outfits — headwear, isidwaba, beadwork and accessories as one order.</p></div>
-    <div class="card"><span class="em">🧵</span><b>Made to measure</b><p>Every piece fitted and finished for the bride, not pulled off a rack.</p></div>
-    <div class="card"><span class="em">📦</span><b>Nationwide delivery</b><p>Order on WhatsApp from anywhere in South Africa — fitted, packed and shipped.</p></div>
+<section class="press">
+  <div class="wrap press-inner">
+    <span class="press-mark">&ldquo;</span>
+    <div>
+      <blockquote>The traditional bridal look behind Sindi Dlathu's wardrobe on Queendom — now available for your own ceremony.</blockquote>
+      <cite>Bona Magazine</cite>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section style="padding-top:0"><div class="wrap">
-  <div class="press">
-    <span class="em">📰</span>
-    <div><b>Featured in Bona magazine</b><p>Dressed actress Sindi Dlathu in traditional bridal wear for the hit telenovela "Queendom" — the kind of credibility a Facebook page alone can't carry across to new customers searching Google.</p></div>
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="book-head">
+      <div class="eyebrow sans">What we make</div>
+      <h2>Three ways to arrive dressed right.</h2>
+    </div>
+    <div class="shelf">
+      <div><div class="num sans">01</div><h3>Full bridal sets</h3><p>Headwear, isidwaba, beadwork and accessories, built as one complete look for the day.</p></div>
+      <div><div class="num sans">02</div><h3>Made to measure</h3><p>Every piece fitted for the bride specifically — nothing pulled off a rack.</p></div>
+      <div><div class="num sans">03</div><h3>Nationwide delivery</h3><p>Order by WhatsApp from anywhere in South Africa; fitted, packed and shipped to you.</p></div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section id="book" style="padding-top:0"><div class="wrap">
-  <div class="cta">
-    <h2>Your makoti look is <em>one message away.</em></h2>
-    <p>WhatsApp <b style="color:#fff">078 788 1624</b> with your ceremony date and the look you want. The Markade, Johannesburg CBD — orders shipped nationwide.</p>
-    <a class="wa" href="#" onclick="return false;">💬 Order on WhatsApp</a>
+<section class="close" id="order">
+  <div class="wrap">
+    <div class="eyebrow sans">Ready when you are</div>
+    <h2>Tell us the ceremony. <br>We'll build the set.</h2>
+    <p>WhatsApp 078 788 1624 with your date and the look you want — sets ship nationwide from Johannesburg CBD.</p>
+    <a class="wa-link" href="#" onclick="return false;">Message on WhatsApp →</a>
   </div>
-</div></section>
+</section>
 
 <footer><div class="wrap foot">
   <span>© 2026 Swazi Makoti Boutique — website mock-up prepared by Somto Okafor</span>
   <span>078 788 1624 · The Markade, Johannesburg CBD</span>
 </div></footer>
+
 </body>
 </html>
