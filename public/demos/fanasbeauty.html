@@ -4,11 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fana's Beauty Hair Salon — Orlando East, Soweto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{--ink:#201014;--soft:#7a5c66;--bg:#fff9f6;--paper:#fff;--line:#f0dde3;--rose:#b5214f;--peach:#e8673e;--gold:#eab308;--dark:#2c1119}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  body{font-family:'Sora',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+  [data-reveal].in{opacity:1;transform:translateY(0)}
+  .grain{position:relative}
+  .grain::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend-mode:overlay;pointer-events:none}
   .wrap{max-width:1100px;margin:0 auto;padding:0 28px}
   nav{padding:22px 0}
   .nav-inner{display:flex;align-items:center;justify-content:space-between}
@@ -26,7 +33,7 @@
   .addr{font-size:.85rem;color:#a8899a}
 
   .signboard{background:repeating-linear-gradient(135deg,#3a1420,#3a1420 14px,#431724 14px,#431724 28px);position:relative;display:flex;align-items:center;justify-content:center}
-  .board{background:#fff;color:var(--dark);width:84%;padding:30px 26px;border-radius:4px;box-shadow:0 20px 50px rgba(0,0,0,.4);transform:rotate(-2deg)}
+  .board{background:#fff;color:var(--dark);width:84%;padding:30px 26px;border-radius:10px;box-shadow:0 40px 80px -24px rgba(44,17,25,.5);transform:rotate(-2deg)}
   .board h3{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);font-weight:900;margin-bottom:14px}
   .board ul{list-style:none}
   .board li{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed #e8d4da;font-size:.92rem}
@@ -62,7 +69,7 @@
   <a class="btn" href="#book">Book a Slot</a>
 </div></nav>
 
-<header class="hero" id="top">
+<header class="hero grain" id="top">
   <div class="wrap" style="padding:0"></div>
   <div class="hero-inner">
     <div class="wrap hero-text" style="padding-left:28px">
@@ -73,7 +80,7 @@
       <div class="addr" style="margin-top:20px">4454 Masupha Street, Orlando East, Soweto</div>
     </div>
     <div class="signboard">
-      <div class="board">
+      <div class="board" data-reveal>
         <h3>Today's price board</h3>
         <ul>
           <li><span>Wash &amp; blow dry</span><b>from R120</b></li>
@@ -90,7 +97,7 @@
 <section>
   <div class="wrap">
     <div class="head"><div class="tag">What we do</div><h2>Five services, one visit</h2></div>
-    <div class="svcgrid">
+    <div class="svcgrid" data-reveal>
       <div><span class="em">💇🏾‍♀️</span><b>Hair</b></div>
       <div><span class="em">🎀</span><b>Braiding</b></div>
       <div><span class="em">💅🏾</span><b>Nails</b></div>
@@ -102,7 +109,7 @@
 
 <section id="book" style="padding-top:0">
   <div class="wrap">
-    <div class="hours">
+    <div class="hours" data-reveal>
       <div>
         <h2>Walk in or WhatsApp ahead.</h2>
         <p>Send the service you want and your preferred time — we'll confirm your slot by WhatsApp.</p>
@@ -122,5 +129,14 @@
   <span>067 134 2795 · 4454 Masupha Street, Orlando East</span>
 </div></footer>
 
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>

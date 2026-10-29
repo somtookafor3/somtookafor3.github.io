@@ -4,11 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TSK Hair Salon — Soweto · 3.9K Facebook Followers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Archivo+Black&display=swap" rel="stylesheet">
 <style>
   :root{--ink:#06110f;--soft:#4c6460;--bg:#f2fbf8;--paper:#fff;--line:#dcefe9;--lime:#c9f31d;--teal:#064d43;--ink2:#0a2420}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  body{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  h1,.display{font-family:'Archivo Black','Space Grotesk',sans-serif}
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+  [data-reveal].in{opacity:1;transform:translateY(0)}
+  .grain{position:relative}
+  .grain::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.06;mix-blend-mode:overlay;pointer-events:none}
   .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
   nav{padding:24px 0}
   .nav-inner{display:flex;align-items:center;justify-content:space-between}
@@ -62,7 +70,7 @@
   <a class="btn" href="#book">Book Now</a>
 </div></nav>
 
-<header class="slab" id="top">
+<header class="slab grain" id="top">
   <div class="slab-inner">
     <div class="wrap slab-text">
       <span class="count">3.9K on Facebook</span>
@@ -81,7 +89,7 @@
 <div class="ticker"><span>★ BOOK ON WHATSAPP</span><span>★ WALK-INS WELCOME</span><span>★ BOOK ON WHATSAPP</span><span>★ WALK-INS WELCOME</span><span>★ BOOK ON WHATSAPP</span><span>★ WALK-INS WELCOME</span></div>
 
 <section>
-  <div class="wrap split">
+  <div class="wrap split" data-reveal>
     <div class="reel">
       <div></div><div></div><div></div>
     </div>
@@ -93,7 +101,7 @@
   </div>
 </section>
 
-<section class="close" id="book">
+<section class="close" id="book" data-reveal>
   <div class="wrap">
     <h2>Your chair is <span>one text away.</span></h2>
     <a class="btn" href="#" onclick="return false;">WhatsApp 062 972 1077</a>
@@ -105,5 +113,14 @@
   <span>062 972 1077 · Soweto</span>
 </div></footer>
 
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
 </body>
 </html>
