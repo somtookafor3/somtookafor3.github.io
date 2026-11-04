@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EJC Paving — Driveways, Patios &amp; Walkways · Chartwell, Randburg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1a17;--charcoal:#272420;--slate:#4f4a42;--soft:#6e675b;
+    --bg:#f2eee5;--paper:#fff;--line:#e1dbcb;
+    --stone:#b9ab8f;--stone-dk:#8c7a5c;
+    --clay:#9a5536;--clay-dk:#6c3b24;--clay-lt:#c98a63;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Work Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+  h1,h2,h3,.display{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.01em}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  img{max-width:100%;display:block}
+
+  [data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+  [data-reveal].in{opacity:1;transform:translateY(0)}
+  [data-reveal="stagger"] > *{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+  [data-reveal="stagger"].in > *{opacity:1;transform:translateY(0)}
+  [data-reveal="stagger"].in > *:nth-child(1){transition-delay:.03s}
+  [data-reveal="stagger"].in > *:nth-child(2){transition-delay:.1s}
+  [data-reveal="stagger"].in > *:nth-child(3){transition-delay:.17s}
+  [data-reveal="stagger"].in > *:nth-child(4){transition-delay:.24s}
+  [data-reveal="stagger"].in > *:nth-child(5){transition-delay:.31s}
+  [data-reveal="stagger"].in > *:nth-child(6){transition-delay:.38s}
+
+  /* grain / noise overlay — used on dark panels only, single meaning throughout */
+  .panel-noise{position:relative}
+  .panel-noise::after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:overlay;opacity:.1;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:'Oswald',sans-serif;font-weight:600;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;padding:15px 28px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);transition:all .25s ease}
+  .btn:hover{background:transparent;color:var(--ink)}
+  .btn-clay{background:var(--clay);border-color:var(--clay);color:#fff}
+  .btn-clay:hover{background:transparent;color:var(--clay-lt)}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn-ghost:hover{background:#fff;color:var(--ink)}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* nav */
+  nav{padding:24px 0;position:relative;z-index:5}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .brand{text-decoration:none;color:var(--ink);font-family:'Oswald',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:.03em;display:flex;align-items:baseline;gap:8px}
+  .brand small{font-family:'Work Sans',sans-serif;font-weight:500;font-size:.62rem;letter-spacing:.22em;color:var(--stone-dk);text-transform:uppercase}
+
+  /* hero */
+  .hero{background:linear-gradient(185deg,var(--charcoal) 0%,var(--ink) 65%);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      linear-gradient(45deg, rgba(255,255,255,.055) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.055) 75%),
+      linear-gradient(45deg, rgba(255,255,255,.055) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.055) 75%);
+    background-size:64px 64px;background-position:0 0, 32px 32px}
+  .hero-inner{position:relative;z-index:2;padding:108px 0 128px;max-width:42rem}
+  .eyebrow{font-family:'Oswald',sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--clay-lt);margin-bottom:22px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--clay-lt)}
+  .hero h1{font-size:clamp(2.5rem,6vw,4.1rem);font-weight:600;line-height:1.04;margin-bottom:24px}
+  .hero h1 em{font-style:normal;color:var(--clay-lt)}
+  .hero p{font-family:'Work Sans',sans-serif;text-transform:none;letter-spacing:0;color:#d9d2c3;font-size:1.08rem;max-width:34rem;margin-bottom:38px}
+
+  /* skewed ribbon seam between hero and content */
+  .seam{position:relative;z-index:3;margin-top:-34px;margin-bottom:26px}
+  .seam-strip{background:var(--clay);color:#fff;transform:rotate(-1.1deg);box-shadow:0 22px 44px -18px rgba(108,59,36,.55);overflow:hidden;white-space:nowrap}
+  .seam-track{display:inline-flex;padding:13px 0;font-family:'Oswald',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase}
+  .seam-track span{padding:0 26px;opacity:.95}
+  .seam-track span::after{content:"◆";margin-left:26px;opacity:.6;font-size:.6rem;vertical-align:middle}
+
+  /* zigzag divider evoking a paving edge course */
+  .edge-divider{height:14px;width:100%;
+    background-image:linear-gradient(135deg, var(--stone) 25%, transparent 25%), linear-gradient(225deg, var(--stone) 25%, transparent 25%);
+    background-position:0 0, 7px 0;background-size:14px 14px;background-repeat:repeat-x;opacity:.55}
+
+  section{padding:96px 0}
+  .head{max-width:38rem;margin:0 0 52px}
+  .head.center{margin:0 auto 52px;text-align:center}
+  .tag{font-family:'Oswald',sans-serif;font-weight:600;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay-dk);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .head.center .tag{justify-content:center}
+  .tag::before{content:"";width:24px;height:2px;background:var(--clay-dk)}
+  .head.center .tag::before{display:none}
+  .head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:600;margin-bottom:16px;line-height:1.12}
+  .head p{color:var(--soft);font-size:1.02rem;max-width:36rem}
+  .head.center p{margin:0 auto}
+
+  /* services grid */
+  .services{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .svc-card{background:var(--paper);border:1px solid var(--line);padding:30px 26px 32px;box-shadow:0 26px 48px -30px rgba(28,26,23,.22);transition:transform .3s ease,box-shadow .3s ease}
+  .svc-card:hover{transform:translateY(-6px);box-shadow:0 30px 54px -24px rgba(154,85,54,.28)}
+  .svc-icon{width:56px;height:56px;margin-bottom:20px;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(28,26,23,.08)}
+  .svc-card h3{font-size:1.02rem;font-weight:600;margin-bottom:10px;letter-spacing:.02em}
+  .svc-card p{color:var(--soft);font-size:.92rem;text-transform:none;letter-spacing:0}
+
+  /* pattern swatch recipes */
+  .sw-herringbone{background-color:var(--stone);background-image:linear-gradient(45deg, var(--stone-dk) 25%, transparent 25%, transparent 75%, var(--stone-dk) 75%),linear-gradient(45deg, var(--stone-dk) 25%, transparent 25%, transparent 75%, var(--stone-dk) 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+  .sw-basket{background-color:var(--stone);background-image:repeating-linear-gradient(90deg, var(--stone-dk) 0 5px, transparent 5px 10px),repeating-linear-gradient(0deg, var(--clay) 0 5px, transparent 5px 10px);background-size:20px 20px,20px 20px;background-position:0 0,10px 10px;opacity:.9}
+  .sw-running{background-color:var(--stone);background-image:linear-gradient(var(--line) 0 2px, transparent 2px 100%),linear-gradient(90deg, var(--line) 0 2px, transparent 2px 100%),linear-gradient(90deg, var(--line) 0 2px, transparent 2px 100%);background-size:100% 14px,28px 100%,28px 100%;background-position:0 0,0 0,14px 7px}
+  .sw-stack{background-color:var(--stone-dk);background-image:linear-gradient(var(--line) 0 2px, transparent 2px 100%),linear-gradient(90deg, var(--line) 0 2px, transparent 2px 100%);background-size:16px 16px,16px 16px}
+  .sw-soldier{background-color:var(--stone);background-image:repeating-linear-gradient(90deg, var(--clay) 0 8px, var(--stone-dk) 8px 16px)}
+  .sw-radial{background-color:var(--stone-dk);background-image:repeating-conic-gradient(var(--stone) 0deg 12deg, var(--clay) 12deg 24deg)}
+
+  /* retaining-wall icon (SVG, not a gradient pattern) */
+  .svc-icon svg{width:100%;height:100%;display:block}
+
+  /* pattern gallery */
+  .patterns-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+  .swatch{text-align:center}
+  .swatch-tile{aspect-ratio:1;border-radius:3px;margin-bottom:14px;box-shadow:0 20px 36px -22px rgba(28,26,23,.35),inset 0 0 0 1px rgba(28,26,23,.08)}
+  .swatch b{display:block;font-family:'Oswald',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+  .swatch span{display:block;font-size:.78rem;color:var(--soft)}
+
+  /* trust strip */
+  .trust{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust-inner{display:grid;grid-template-columns:repeat(3,1fr);padding:54px 0}
+  .trust-inner > div{text-align:center;padding:0 24px;border-left:3px solid var(--clay)}
+  .trust-inner > div:first-child{border-left:3px solid var(--clay)}
+  .trust-inner b{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:600;display:block;letter-spacing:.01em}
+  .trust-inner span{font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
+
+  /* closing CTA */
+  .close{background:var(--ink);color:#fff;padding:108px 0;text-align:center;position:relative;overflow:hidden}
+  .close::before{content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(45deg, rgba(255,255,255,.04) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.04) 75%),linear-gradient(45deg, rgba(255,255,255,.04) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.04) 75%);
+    background-size:56px 56px;background-position:0 0,28px 28px}
+  .close-inner{position:relative;z-index:2}
+  .close h2{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:600;line-height:1.1;margin:0 auto 14px;max-width:38rem}
+  .close h2 em{font-style:normal;color:var(--clay-lt)}
+  .close p{text-transform:none;letter-spacing:0;color:#cfc6b4;max-width:30rem;margin:0 auto 36px;font-size:1.02rem}
+  .close .cta-row{justify-content:center}
+
+  footer{padding:36px 0;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.84rem;color:var(--soft)}
+
+  @media(max-width:900px){
+    .services{grid-template-columns:repeat(2,1fr)}
+    .patterns-grid{grid-template-columns:repeat(3,1fr)}
+    .trust-inner{grid-template-columns:1fr;gap:28px}
+    .trust-inner > div{border-left:0;border-top:3px solid var(--clay);padding-top:18px}
+  }
+  @media(max-width:560px){
+    section{padding:72px 0}
+    .services{grid-template-columns:1fr}
+    .patterns-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-inner{padding:88px 0 96px}
+    .cta-row{flex-direction:column;align-items:stretch}
+    .cta-row .btn{justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-inner">
+  <a class="brand" href="#top">EJC <small>Paving</small></a>
+  <a class="btn" href="tel:0792225754">Call Now</a>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Chartwell A H · Randburg · Gauteng</span>
+    <h1>Paving that holds its <em>line</em>, season after season.</h1>
+    <p>EJC Paving builds driveways, patios, walkways and retaining walls around Chartwell and Randburg — set by hand, laid to drain, built to carry weight without shifting.</p>
+    <div class="cta-row">
+      <a class="btn btn-clay" href="tel:0792225754">Call 079 222 5754</a>
+      <a class="btn btn-ghost" href="https://wa.me/27792225754?text=Hi%20EJC%20Paving%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+  </div>
+</header>
+
+<div class="seam">
+  <div class="seam-strip">
+    <div class="seam-track">
+      <span>DRIVEWAYS</span><span>PATIOS</span><span>WALKWAYS</span><span>RETAINING WALLS</span>
+      <span>DRIVEWAYS</span><span>PATIOS</span><span>WALKWAYS</span><span>RETAINING WALLS</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div class="tag">What we lay</div>
+      <h2>Four jobs, one standard of finish.</h2>
+      <p>Whatever the surface, the base work is the same discipline: proper excavation, compacted bedding, and a laying pattern chosen for how the space will actually be used.</p>
+    </div>
+    <div class="services" data-reveal="stagger">
+      <div class="svc-card">
+        <div class="svc-icon sw-herringbone"></div>
+        <h3>Driveways</h3>
+        <p>Built to carry daily vehicle weight without rutting or shifting at the edges.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon sw-basket"></div>
+        <h3>Patios &amp; Entertainment Areas</h3>
+        <p>Laid flat and sloped correctly, so water runs off instead of pooling after rain.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon sw-soldier"></div>
+        <h3>Walkways &amp; Pathways</h3>
+        <p>Clean, consistent lines that tie a garden or entrance together.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="30" width="60" height="11" fill="#8c7a5c"/>
+            <rect x="10" y="17" width="44" height="11" fill="#9a5536"/>
+            <rect x="18" y="4" width="28" height="11" fill="#b9ab8f"/>
+          </svg>
+        </div>
+        <h3>Retaining Walls</h3>
+        <p>Stacked and backed properly so a sloped stand stays put.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="edge-divider"></div></div>
+
+<section style="background:var(--paper)">
+  <div class="wrap">
+    <div class="head center" data-reveal>
+      <div class="tag">The patterns</div>
+      <h2>A feel for the finish.</h2>
+      <p>No two stands lay the same. Here are a few of the bonds we work with — the pattern changes the look, the feel underfoot, and how the surface handles water and weight.</p>
+    </div>
+    <div class="patterns-grid" data-reveal="stagger">
+      <div class="swatch"><div class="swatch-tile sw-herringbone"></div><b>Herringbone</b><span>Interlocking driveway strength</span></div>
+      <div class="swatch"><div class="swatch-tile sw-running"></div><b>Running Bond</b><span>Classic brick-style lay</span></div>
+      <div class="swatch"><div class="swatch-tile sw-basket"></div><b>Basket Weave</b><span>Woven texture for patios</span></div>
+      <div class="swatch"><div class="swatch-tile sw-stack"></div><b>Stack Bond</b><span>Clean, square grid lines</span></div>
+      <div class="swatch"><div class="swatch-tile sw-soldier"></div><b>Soldier Course</b><span>Sharp edging &amp; borders</span></div>
+      <div class="swatch"><div class="swatch-tile sw-radial"></div><b>Radial Fan</b><span>Circular feature points</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap trust-inner" data-reveal="stagger">
+    <div><b>Chartwell A H</b><span>Randburg, Gauteng</span></div>
+    <div><b>Hand-Set</b><span>Stone by Stone</span></div>
+    <div><b>4 Services</b><span>Driveways to Retaining Walls</span></div>
+  </div>
+</div>
+
+<section class="close panel-noise">
+  <div class="wrap close-inner" data-reveal>
+    <h2>Ready to stop looking at a <em>cracked driveway?</em></h2>
+    <p>Send us a message on WhatsApp or give us a call — we'll come out, look at the space, and tell you straight what it needs.</p>
+    <div class="cta-row">
+      <a class="btn btn-clay" href="tel:0792225754">Call 079 222 5754</a>
+      <a class="btn btn-ghost" href="https://wa.me/27792225754?text=Hi%20EJC%20Paving%2C%20I%27d%20like%20a%20quote" target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap foot">
+  <span>© 2026 EJC Paving — website mock-up prepared by Somto Okafor</span>
+  <span>079 222 5754 · Chartwell A H, Randburg</span>
+</div></footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

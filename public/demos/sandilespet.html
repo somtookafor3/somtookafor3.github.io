@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandile's Mobile Pet Grooming — Johannesburg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b2420; --soft:#7d6f61; --bg:#f7f1e8; --paper:#fffcf7; --line:#e6d9c8;
+    --clay:#b9693f; --clay-d:#7e4327; --clay-l:#e3a97c; --sage:#6b7a5e; --cream-deep:#efe2cd;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+  h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400}
+  [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+  [data-reveal].in{opacity:1;transform:translateY(0)}
+  .grain{position:relative}
+  .grain::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.05;mix-blend-mode:overlay;pointer-events:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+
+  nav{padding:24px 0;border-bottom:1px solid var(--line);background:var(--bg);position:relative;z-index:5}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;flex-direction:column;text-decoration:none;color:var(--ink)}
+  .brand b{font-family:'DM Serif Display',serif;font-size:1.28rem;font-weight:400;letter-spacing:-.01em}
+  .brand b i{font-style:italic;color:var(--clay)}
+  .brand small{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-top:2px}
+  .wa-btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:var(--clay);color:#fff;font-weight:600;font-size:.84rem;padding:13px 24px;border-radius:999px;box-shadow:0 14px 30px -12px rgba(126,67,39,.55);transition:all .25s ease;white-space:nowrap}
+  .wa-btn:hover{background:var(--clay-d);transform:translateY(-1px)}
+  .wa-btn svg{width:16px;height:16px;flex-shrink:0}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;padding:84px 0 70px;background:
+    radial-gradient(ellipse 60% 50% at 85% 10%, var(--cream-deep) 0%, transparent 60%),
+    var(--bg)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
+  .eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--clay)}
+  h1{font-size:clamp(2.3rem,4.2vw,3.4rem);line-height:1.1;letter-spacing:-.01em;margin-bottom:22px}
+  h1 i{font-style:italic;color:var(--clay)}
+  .lede{font-size:1.07rem;color:var(--soft);max-width:30rem;margin-bottom:34px}
+
+  .trustline{display:flex;align-items:center;gap:22px;margin-bottom:36px;flex-wrap:wrap}
+  .trustline .tl-num{display:flex;flex-direction:column;line-height:1}
+  .trustline .tl-num b{font-family:'DM Serif Display',serif;font-size:2.1rem;color:var(--ink)}
+  .trustline .tl-num span{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--soft);font-weight:600;margin-top:4px}
+  .tl-div{width:1px;height:38px;background:var(--line)}
+  .tl-stars{display:flex;gap:3px;color:var(--clay)}
+  .tl-stars svg{width:15px;height:15px}
+
+  .hero-blob{position:relative;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+  .blob-shape{position:absolute;inset:0;border-radius:44% 56% 58% 42% / 48% 42% 58% 52%;background:
+    radial-gradient(circle at 30% 20%, var(--clay-l) 0%, transparent 55%),
+    radial-gradient(circle at 75% 80%, var(--sage) 0%, transparent 50%),
+    linear-gradient(160deg, var(--cream-deep) 0%, var(--clay-l) 120%);
+    box-shadow:0 60px 100px -40px rgba(126,67,39,.45);}
+  .blob-shape.grain::after{border-radius:inherit}
+  .hero-illo{position:relative;z-index:1;width:62%;color:var(--paper)}
+  .hero-tag{position:absolute;bottom:14%;left:8%;background:var(--paper);color:var(--ink);font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:9px 16px;border-radius:999px;box-shadow:0 14px 30px -14px rgba(43,36,32,.4);z-index:2}
+  .hero-tag span{color:var(--clay)}
+
+  /* ---------- TRUST STRIP ---------- */
+  .stat-row{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .stat-item{padding:44px 30px;text-align:center;border-left:1px solid var(--line)}
+  .stat-item:first-child{border-left:0}
+  .stat-icon{width:44px;height:44px;border-radius:50%;background:var(--bg);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;color:var(--clay)}
+  .stat-icon svg{width:20px;height:20px}
+  .stat-item b{display:block;font-family:'DM Serif Display',serif;font-size:1.9rem;margin-bottom:6px}
+  .stat-item p{font-size:.86rem;color:var(--soft)}
+
+  /* ---------- HOW IT WORKS ---------- */
+  .how{padding:96px 0 90px}
+  .sec-head{max-width:36rem;margin:0 auto 56px;text-align:center}
+  .sec-head .eyebrow{justify-content:center}
+  .sec-head h2{font-size:2.1rem}
+  .steps{display:flex;position:relative;gap:0}
+  .steps::before{content:"";position:absolute;top:27px;left:9%;right:9%;height:1px;background:var(--line);z-index:0}
+  .step{flex:1;text-align:center;position:relative;padding:0 18px}
+  .step-num{width:56px;height:56px;border-radius:50%;background:var(--paper);border:1.5px solid var(--clay);color:var(--clay);font-family:'DM Serif Display',serif;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;position:relative;z-index:1}
+  .step h3{font-size:1.15rem;margin-bottom:10px}
+  .step p{font-size:.9rem;color:var(--soft);max-width:16rem;margin:0 auto}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:0 0 96px}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;gap:18px}
+  .svc-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px 26px;box-shadow:0 24px 48px -32px rgba(126,67,39,.25);transition:transform .3s ease}
+  .svc-card:hover{transform:translateY(-4px)}
+  .svc-card.wide{grid-column:span 2}
+  .svc-icon{width:40px;height:40px;border-radius:12px;background:var(--bg);display:flex;align-items:center;justify-content:center;color:var(--clay);margin-bottom:18px}
+  .svc-icon svg{width:19px;height:19px}
+  .svc-card h3{font-size:1.1rem;margin-bottom:8px;font-family:'DM Sans',sans-serif;font-weight:700}
+  .svc-card p{font-size:.88rem;color:var(--soft)}
+
+  /* ---------- SERVICE AREA ---------- */
+  .area{padding:0 0 96px}
+  .area-panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center;background:var(--cream-deep);border-radius:26px;padding:56px;position:relative;overflow:hidden}
+  .area-map{position:relative;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+  .ring{position:absolute;border:1.5px solid rgba(126,67,39,.3);border-radius:50%}
+  .ring.r1{width:60%;height:60%}
+  .ring.r2{width:85%;height:85%;border-color:rgba(126,67,39,.18)}
+  .ring.r3{width:100%;height:100%;border-color:rgba(126,67,39,.1)}
+  .pin{position:relative;z-index:1;width:34px;height:34px;color:var(--clay)}
+  .area-text h2{font-size:1.8rem;margin-bottom:16px}
+  .area-text p{color:var(--soft);margin-bottom:12px;font-size:.98rem}
+
+  /* ---------- TRUST QUOTE ---------- */
+  .trustquote{padding:10px 0 96px}
+  .tq-box{background:var(--ink);color:#f3e9da;border-radius:26px;padding:68px 60px;text-align:center;position:relative;overflow:hidden}
+  .tq-box .mark{font-family:'DM Serif Display',serif;font-style:italic;font-size:3.4rem;color:var(--clay-l);line-height:1;margin-bottom:6px}
+  .tq-box h2{font-size:1.9rem;max-width:34rem;margin:0 auto 16px;color:#fff}
+  .tq-box p{color:#cbb9a5;font-size:.94rem;max-width:30rem;margin:0 auto}
+  .tq-box p a{color:var(--clay-l);text-decoration:none;font-weight:600}
+
+  /* ---------- CLOSING CTA ---------- */
+  .close{background:linear-gradient(155deg,var(--clay-d),var(--clay));color:#fff;padding:88px 0;text-align:center;position:relative;overflow:hidden}
+  .close .eyebrow{color:#f3ddc9;justify-content:center}
+  .close .eyebrow::before{background:#f3ddc9}
+  .close h2{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:18px;color:#fff}
+  .close p{color:#f5dfca;max-width:28rem;margin:0 auto 32px;font-size:1rem}
+  .close .wa-btn{background:#fff;color:var(--clay-d);font-size:.92rem;padding:16px 30px}
+  .close .wa-btn:hover{background:#f3ddc9}
+  .phone-big{display:block;margin-top:22px;font-family:'DM Serif Display',serif;font-size:1.3rem;color:#fff;letter-spacing:.02em}
+
+  footer{padding:34px 0;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--soft)}
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-blob{max-width:320px;margin:0 auto}
+    .stat-grid{grid-template-columns:1fr}
+    .stat-item{border-left:0;border-top:1px solid var(--line)}
+    .stat-item:first-child{border-top:0}
+    .steps{flex-direction:column;gap:38px}
+    .steps::before{display:none}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .svc-card.wide{grid-column:span 2}
+    .area-panel{grid-template-columns:1fr;padding:40px 28px;text-align:center}
+    .area-map{max-width:260px;margin:0 auto}
+    .tq-box{padding:48px 28px}
+  }
+  @media(max-width:560px){
+    .svc-grid{grid-template-columns:1fr}
+    .svc-card.wide{grid-column:span 1}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-inner">
+  <a class="brand" href="#top"><b>Sandile's <i>Pet Grooming</i></b><small>Mobile Service · Johannesburg</small></a>
+  <a class="wa-btn" href="#" onclick="return false;">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.86.5 3.6 1.38 5.1L2 22l5.1-1.34A9.96 9.96 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.8 14.3c-.24.68-1.4 1.3-1.95 1.38-.5.08-1.13.11-1.82-.12-.42-.13-.96-.3-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.4.27-.28.58-.35.78-.35.2 0 .4 0 .57.01.18.01.43-.07.67.52.25.6.84 2.08.92 2.23.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.6.17.3.78 1.28 1.67 2.07 1.15 1.02 2.12 1.34 2.42 1.49.3.15.48.13.65-.05.18-.18.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.13.08.73-.16 1.41z"/></svg>
+    WhatsApp
+  </a>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div data-reveal>
+      <div class="eyebrow">Mobile Grooming · Serving Johannesburg</div>
+      <h1>Professional pet grooming, <i>at your door.</i></h1>
+      <p class="lede">Sandile brings a full grooming setup straight to your home — your dog or cat gets bathed, brushed and tidied up in the surroundings they already know, with no car ride and no waiting room.</p>
+
+      <div class="trustline">
+        <div class="tl-num"><b>100%</b><span>Recommended</span></div>
+        <div class="tl-div"></div>
+        <div class="tl-num"><b>19</b><span>Facebook reviews</span></div>
+        <div class="tl-div"></div>
+        <div class="tl-stars">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2L4.6 17.4l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2L4.6 17.4l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2L4.6 17.4l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2L4.6 17.4l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2L4.6 17.4l1.3-6L1.3 7.2l6.1-.6z"/></svg>
+        </div>
+      </div>
+
+      <a class="wa-btn" href="#" onclick="return false;" style="padding:16px 30px;font-size:.92rem">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.86.5 3.6 1.38 5.1L2 22l5.1-1.34A9.96 9.96 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.8 14.3c-.24.68-1.4 1.3-1.95 1.38-.5.08-1.13.11-1.82-.12-.42-.13-.96-.3-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.4.27-.28.58-.35.78-.35.2 0 .4 0 .57.01.18.01.43-.07.67.52.25.6.84 2.08.92 2.23.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.6.17.3.78 1.28 1.67 2.07 1.15 1.02 2.12 1.34 2.42 1.49.3.15.48.13.65-.05.18-.18.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.13.08.73-.16 1.41z"/></svg>
+        Book on WhatsApp — 084 590 8151
+      </a>
+    </div>
+
+    <div class="hero-blob" data-reveal>
+      <div class="blob-shape grain"></div>
+      <svg class="hero-illo" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M52 172c-1-14 2-27 9-36-5-7-8-16-8-25 0-24 15-30 15-30s2-9 11-14c6-3 13-3 17 0 5-9 15-13 24-11 10 2 16 11 16 11s12 2 17 13c4 9 2 19-3 26 7 9 10 20 9 35" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M70 74c-10-2-17-11-16-22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M128 70c9-3 15-13 13-24" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="92" cy="86" r="3.2" fill="currentColor"/>
+        <circle cx="116" cy="86" r="3.2" fill="currentColor"/>
+        <path d="M100 96c2 2 6 2 8 0" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M103 90v6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M50 172h100" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+      </svg>
+      <div class="hero-tag">We come to <span>you</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="stat-row" data-reveal>
+  <div class="wrap stat-grid">
+    <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></div>
+      <b>Groomed at home</b>
+      <p>No transport, no travel stress — just your own driveway or garden.</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.6 5.6 6.1.6-4.6 4.2 1.3 6-5.4-3.2L6.6 18.4l1.3-6L3.3 8.2l6.1-.6z"/></svg></div>
+      <b>100% recommended</b>
+      <p>Every one of 19 reviews on Facebook recommends Sandile's work.</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/></svg></div>
+      <b>Johannesburg-wide</b>
+      <p>Mobile service covering homes across the greater Johannesburg area.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow">How it works</div>
+      <h2>Three steps, zero hassle.</h2>
+    </div>
+    <div class="steps" data-reveal>
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Message on WhatsApp</h3>
+        <p>Send your suburb, your pet's size and the day that works for you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Sandile comes to you</h3>
+        <p>Full mobile grooming setup arrives at your home — no need to go anywhere.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Your pet, groomed and relaxed</h3>
+        <p>Bathed, brushed and tidied up in surroundings they already feel calm in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <div class="eyebrow">What's included</div>
+      <h2>A complete groom, every visit.</h2>
+    </div>
+    <div class="svc-grid" data-reveal>
+      <div class="svc-card wide">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12c0-4 3-8 8-8s8 4 8 8-3 8-8 8-8-4-8-8z"/><path d="M9 10c.5-1 1.5-1 2 0M15 10c.5-1 1.5-1 2 0"/></svg></div>
+        <h3>Full bath &amp; blow-dry</h3>
+        <p>Shampoo, conditioning rinse and a full dry-out, suited to your pet's coat type.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l6-6M4 20l2-8 10-10 6 6-10 10z"/></svg></div>
+        <h3>Brush-out &amp; de-shedding</h3>
+        <p>Working through tangles and loose coat before the bath.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 4c0 3-2 4-2 7a4 4 0 008 0c0-3-2-4-2-7"/><path d="M12 15v5"/></svg></div>
+        <h3>Nail trim &amp; filing</h3>
+        <p>Trimmed and smoothed so paws stay comfortable on every surface.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.4"/></svg></div>
+        <h3>Ear &amp; eye cleaning</h3>
+        <p>Gentle cleaning around the ears and eyes as part of every groom.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.8 4.8L19 9l-4 3.4L16 18l-4-2.6L8 18l1-5.6L5 9l5.2-1.2z"/></svg></div>
+        <h3>Finishing touches</h3>
+        <p>Light trim and styling so your pet looks and feels its best.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area">
+  <div class="wrap">
+    <div class="area-panel grain" data-reveal>
+      <div class="area-map">
+        <div class="ring r3"></div>
+        <div class="ring r2"></div>
+        <div class="ring r1"></div>
+        <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/></svg>
+      </div>
+      <div class="area-text">
+        <h2>No studio. No street address. Just your home.</h2>
+        <p>Sandile's Mobile Pet Grooming doesn't run from a fixed shop — the whole point is that there's nothing for you to drive to.</p>
+        <p>Based around Johannesburg, Sandile travels to clients across the city with everything needed for a full groom, right on your own property.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trustquote">
+  <div class="wrap">
+    <div class="tq-box grain" data-reveal>
+      <div class="mark">&ldquo;</div>
+      <h2>A 100% recommendation rate, from 19 real reviews on Facebook.</h2>
+      <p>Every single client who has reviewed Sandile's Mobile Pet Grooming on Facebook recommends the service — see the reviews for yourself, or just ask around.</p>
+    </div>
+  </div>
+</section>
+
+<section class="close grain" id="book">
+  <div class="wrap">
+    <div class="eyebrow">Ready when you are</div>
+    <h2>Give your pet a groom day<br>without leaving home.</h2>
+    <p>Message Sandile on WhatsApp with your suburb and a few details about your pet to book a visit.</p>
+    <a class="wa-btn" href="#" onclick="return false;">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.86.5 3.6 1.38 5.1L2 22l5.1-1.34A9.96 9.96 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.8 14.3c-.24.68-1.4 1.3-1.95 1.38-.5.08-1.13.11-1.82-.12-.42-.13-.96-.3-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.4.27-.28.58-.35.78-.35.2 0 .4 0 .57.01.18.01.43-.07.67.52.25.6.84 2.08.92 2.23.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.54-.15.15-.3.31-.13.6.17.3.78 1.28 1.67 2.07 1.15 1.02 2.12 1.34 2.42 1.49.3.15.48.13.65-.05.18-.18.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.35.08.13.08.73-.16 1.41z"/></svg>
+      Message on WhatsApp
+    </a>
+    <span class="phone-big">084 590 8151</span>
+  </div>
+</section>
+
+<footer><div class="wrap foot">
+  <span>© 2026 Sandile's Mobile Pet Grooming — website mock-up prepared by Somto Okafor</span>
+  <span>084 590 8151 · Mobile service, Johannesburg</span>
+</div></footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

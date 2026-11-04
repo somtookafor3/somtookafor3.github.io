@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tenzo Active Gym — Tembisa, Midrand · Est. 2018</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#19140f; --charcoal:#241e17; --charcoal2:#2e261d;
+    --bg:#f3eee3; --paper:#fbf7f0; --line:#e3dac3;
+    --soft:#6e6253; --rust:#a93c20; --rust2:#c9502c;
+    --ochre:#bf8a33; --ochre2:#dba84c;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.56;-webkit-font-smoothing:antialiased}
+  .display{font-family:'Anton','Inter',sans-serif;text-transform:uppercase;letter-spacing:.01em}
+
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+  [data-reveal].in{opacity:1;transform:translateY(0)}
+
+  .grain{position:relative}
+  .grain::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.06;mix-blend-mode:overlay;pointer-events:none}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+  nav{padding:24px 0;background:var(--bg)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+  .brand-mark{width:34px;height:34px;border-radius:7px;background:var(--rust);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 18px -8px rgba(169,60,32,.6)}
+  .brand-mark svg{width:19px;height:19px}
+  .brand-name{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.08rem;letter-spacing:.01em;line-height:1}
+  .brand-name small{display:block;font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.56rem;color:var(--soft);font-weight:600;margin-top:3px}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;padding:14px 24px;background:var(--ink);color:var(--ochre2);border:1px solid var(--ink);transition:all .25s ease;white-space:nowrap}
+  .btn:hover{background:transparent;color:var(--ink)}
+  .btn-rust{background:var(--rust);color:#fff;border-color:var(--rust);box-shadow:0 18px 32px -16px rgba(169,60,32,.55)}
+  .btn-rust:hover{background:transparent;color:var(--rust)}
+  .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+  .btn-line:hover{background:#fff;color:var(--ink)}
+
+  .tag{font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+  .tag::before{content:"";width:22px;height:1px;background:currentColor;opacity:.6}
+
+  /* ---------- HERO ---------- */
+  header.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:0}
+  .hero-main{padding:80px 0 92px}
+  .hero-eyebrow{color:var(--ochre2);font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:22px;display:block}
+  .hero-main h1{font-size:clamp(2.6rem,6vw,4.3rem);line-height:1.02;margin-bottom:26px;color:#fff}
+  .hero-main h1 em{font-style:normal;color:var(--rust2)}
+  .hero-main p{color:#cfc5b5;font-size:1.05rem;max-width:30rem;margin-bottom:34px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+  .badge-rail{background:var(--charcoal);border-left:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center;gap:0;padding:40px 36px}
+  .badge{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:16px}
+  .badge:last-child{border-bottom:0}
+  .badge-ic{width:44px;height:44px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  .badge-ic svg{width:22px;height:22px}
+  .badge b{display:block;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.06rem;letter-spacing:.01em;color:#fff;line-height:1.1}
+  .badge span{display:block;font-size:.76rem;color:#b9ad99;margin-top:3px;font-weight:500}
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{background:var(--ochre);color:var(--ink);overflow:hidden;white-space:nowrap;padding:13px 0;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+  .marquee-track{display:inline-block;animation:scroll 26s linear infinite}
+  .marquee span{padding:0 28px}
+  @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+  section{padding:92px 0}
+  .head{max-width:36rem;margin:0 0 48px}
+  .head.center{margin:0 auto 48px;text-align:center}
+  .head .tag{color:var(--rust);margin-bottom:14px}
+  .head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-top:6px}
+  .head p{color:var(--soft);margin-top:14px;font-size:1rem}
+
+  /* ---------- HOURS ---------- */
+  .hours-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+  .hours-card{background:var(--ink);color:#fff;border-radius:14px;overflow:hidden;box-shadow:0 44px 80px -30px rgba(25,20,15,.45)}
+  .hours-card-head{padding:26px 30px;background:var(--charcoal2);display:flex;justify-content:space-between;align-items:baseline}
+  .hours-card-head b{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:.01em;font-size:1rem;color:var(--ochre2)}
+  .hours-card-head span{font-size:.72rem;color:#b9ad99;text-transform:uppercase;letter-spacing:.08em}
+  .hrow{display:flex;justify-content:space-between;align-items:center;padding:18px 30px;border-bottom:1px solid rgba(255,255,255,.08);font-size:.98rem}
+  .hrow:last-child{border-bottom:0}
+  .hrow .day{font-weight:700;letter-spacing:.02em}
+  .hrow .time{color:#d8cdb9;font-weight:500}
+  .hrow.open .dot{width:7px;height:7px;border-radius:50%;background:var(--rust2);display:inline-block;margin-right:9px;box-shadow:0 0 0 4px rgba(201,80,44,.18)}
+
+  .hours-note{padding:4px 2px}
+  .hours-note .tag{color:var(--rust);margin-bottom:14px}
+  .hours-note h2{font-size:clamp(1.8rem,3.4vw,2.4rem);margin-bottom:16px}
+  .hours-note p{color:var(--soft);margin-bottom:12px}
+
+  /* ---------- SERVICES ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:34px 28px;box-shadow:0 30px 60px -32px rgba(169,60,32,.18);transition:transform .3s ease}
+  .svc-ic{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+  .svc-ic svg{width:26px;height:26px}
+  .svc-card h3{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.18rem;letter-spacing:.01em;margin-bottom:10px}
+  .svc-card p{color:var(--soft);font-size:.94rem}
+
+  /* ---------- COMMUNITY ---------- */
+  .community{background:var(--charcoal);color:#fff}
+  .comm-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center}
+  .comm-num{font-family:'Anton',sans-serif;font-size:clamp(4.2rem,11vw,7.5rem);line-height:.86;color:var(--rust2)}
+  .comm-num span{display:block;font-family:'Inter',sans-serif;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#b9ad99;font-weight:700;margin-top:14px}
+  .comm-text .tag{color:var(--ochre2);margin-bottom:16px}
+  .comm-text h2{font-size:clamp(1.8rem,3.4vw,2.5rem);color:#fff;margin-bottom:18px}
+  .comm-text p{color:#cfc5b5;font-size:1.02rem;margin-bottom:14px;max-width:34rem}
+  .hash{display:inline-flex;align-items:center;gap:8px;margin-top:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:9px 18px;font-weight:700;font-size:.82rem;letter-spacing:.04em;color:var(--ochre2)}
+
+  /* ---------- CTA ---------- */
+  .close{background:var(--rust);color:#fff;text-align:center;position:relative;overflow:hidden}
+  .close h2{font-size:clamp(2rem,4.6vw,3.2rem);margin-bottom:16px;color:#fff}
+  .close p{color:#f3d9cd;font-size:1.05rem;margin-bottom:34px}
+  .close-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  footer{padding:36px 0;border-top:1px solid var(--line);background:var(--bg)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:var(--soft)}
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr}
+    .badge-rail{border-left:0;border-top:1px solid rgba(255,255,255,.08);flex-direction:row;overflow-x:auto;padding:24px 20px;gap:22px}
+    .badge{border-bottom:0;padding:0;flex-shrink:0}
+    .hours-wrap{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr}
+    .comm-grid{grid-template-columns:1fr;text-align:center}
+    .comm-text p{margin-left:auto;margin-right:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap nav-inner">
+  <a class="brand" href="#top">
+    <span class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round"><path d="M3 12h3M18 12h3M6 7v10M18 7v10M6 12h12"/></svg>
+    </span>
+    <span class="brand-name">Tenzo Active<small>Gym · Tembisa</small></span>
+  </a>
+  <a class="btn btn-rust" href="#" onclick="return false;">WhatsApp</a>
+</div></nav>
+
+<header class="hero grain" id="top">
+  <div class="hero-grid">
+    <div class="wrap hero-main">
+      <span class="hero-eyebrow">Est. 2018 · Commercia, Tembisa</span>
+      <h1>Discipline,<br><em>built daily.</em></h1>
+      <p>Tenzo Active Gym has trained Tembisa since 2018 — personal training and recovery care, open seven days a week, built as part of the #townshipeconomy movement.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-rust" href="#" onclick="return false;">WhatsApp 073 507 3957 →</a>
+        <a class="btn btn-line" href="#hours">See the hours</a>
+      </div>
+    </div>
+    <div class="badge-rail">
+      <div class="badge" data-reveal>
+        <span class="badge-ic" style="background:rgba(201,80,44,.16)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9502c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        </span>
+        <span><b>Est. 2018</b><span>Founded in Commercia, Tembisa</span></span>
+      </div>
+      <div class="badge" data-reveal>
+        <span class="badge-ic" style="background:rgba(219,168,76,.16)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#dba84c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        </span>
+        <span><b>7 days a week</b><span>Mon–Sun, doors open every day</span></span>
+      </div>
+      <div class="badge" data-reveal>
+        <span class="badge-ic" style="background:rgba(255,255,255,.08)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3L7 21M17 3l-2 18M4 9h16M3 15h16"/></svg>
+        </span>
+        <span><b>#TownshipEconomy</b><span>Built by the community it serves</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee"><div class="marquee-track">
+  <span>★ OPEN 7 DAYS A WEEK</span><span>★ PERSONAL TRAINING</span><span>★ MASSAGE &amp; RECOVERY</span><span>★ ACUPRESSURE</span><span>★ TEMBISA, MIDRAND</span><span>★ OPEN 7 DAYS A WEEK</span><span>★ PERSONAL TRAINING</span><span>★ MASSAGE &amp; RECOVERY</span><span>★ ACUPRESSURE</span><span>★ TEMBISA, MIDRAND</span>
+</div></div>
+
+<section id="hours">
+  <div class="wrap hours-wrap">
+    <div class="hours-card" data-reveal>
+      <div class="hours-card-head"><b>The Schedule</b><span>Tembisa</span></div>
+      <div class="hrow open"><span class="day"><span class="dot"></span>Monday – Friday</span><span class="time">6:00 – 20:00</span></div>
+      <div class="hrow open"><span class="day"><span class="dot"></span>Saturday</span><span class="time">6:00 – 16:00</span></div>
+      <div class="hrow open"><span class="day"><span class="dot"></span>Sunday</span><span class="time">6:00 – 14:00</span></div>
+    </div>
+    <div class="hours-note" data-reveal>
+      <div class="tag">No off days</div>
+      <h2>The door opens at 6am. Every day.</h2>
+      <p>Early sessions, late sessions, weekends — Tenzo Active Gym keeps the same standard seven days a week, so training fits around your life instead of the other way round.</p>
+      <p>2647 Theresa Street, Tembisa, Commercia, Midrand.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <div class="tag">What we offer</div>
+      <h2>Train hard. Recover harder.</h2>
+      <p>Personal training sits alongside real recovery care — because consistency is only sustainable if the body holds up.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card" data-reveal>
+        <span class="svc-ic" style="background:rgba(201,80,44,.14)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a93c20" stroke-width="2.2" stroke-linecap="round"><path d="M3 12h3M18 12h3M6 8v8M18 8v8M6 12h12"/></svg>
+        </span>
+        <h3>Personal Training</h3>
+        <p>One-on-one coaching built around your goals, your pace and your discipline — not a copy-paste program.</p>
+      </div>
+      <div class="svc-card" data-reveal>
+        <span class="svc-ic" style="background:rgba(191,138,51,.14)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#bf8a33" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11a3 3 0 1 1 5.5-1.7M17 11a3 3 0 1 0-5.5-1.7M5 15c1-1.6 2.8-2.5 7-2.5s6 .9 7 2.5M6 20c1.8-1.4 3.6-2 6-2s4.2.6 6 2"/></svg>
+        </span>
+        <h3>Massage Recovery</h3>
+        <p>Hands-on recovery work to loosen what training tightens, so the next session starts from a better place.</p>
+      </div>
+      <div class="svc-card" data-reveal>
+        <span class="svc-ic" style="background:rgba(169,60,32,.14)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#a93c20" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.4" fill="#a93c20" stroke="none"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+        </span>
+        <h3>Acupressure</h3>
+        <p>Targeted pressure-point therapy to release tension, ease soreness and support faster recovery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="community grain">
+  <div class="wrap comm-grid">
+    <div class="comm-num" data-reveal>2018<span>Founded</span></div>
+    <div class="comm-text" data-reveal>
+      <div class="tag">The movement</div>
+      <h2>Part of the #townshipeconomy.</h2>
+      <p>Since 2018, Tenzo Active Gym has trained out of Commercia, Tembisa — built by the community it serves, for the community it serves.</p>
+      <p>No off-season, no shortcuts. Just the same door, open seven days a week.</p>
+      <span class="hash">#TownshipEconomy</span>
+    </div>
+  </div>
+</section>
+
+<section class="close grain" id="book" data-reveal>
+  <div class="wrap">
+    <h2>Your next session is one text away.</h2>
+    <p>2647 Theresa Street, Tembisa, Commercia, Midrand</p>
+    <div class="close-ctas">
+      <a class="btn" style="background:#fff;color:var(--rust);border-color:#fff" href="#" onclick="return false;">WhatsApp 073 507 3957</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap foot">
+  <span>© 2026 Tenzo Active Gym — website mock-up prepared by Somto Okafor</span>
+  <span>073 507 3957 · Tembisa, Midrand</span>
+</div></footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
